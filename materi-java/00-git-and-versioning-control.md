@@ -7,7 +7,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
 ---
 
-![bg left:40% 60%](./images/rawlabs-academy-logo.png)
+![bg left:40% 60%](./../images/rawlabs-academy-logo.png)
 
 # **Git**
 
@@ -25,26 +25,26 @@ Control the source code version
 # The Problem
 </br>
 
-![w:1000 center](./images/git/versioning-problem.png)
+![w:1000 center](./../images/materi-java/git/versioning-problem.png)
 
 *Revision is a **must**, don't expect every code is **perfect***
 
 ---
 # What is Git?
 <!-- _class: lead -->
-![center](./images/git/git-logo.png)
+![center](./../images/materi-java/git/git-logo.png)
 
 One of the popular **version control system** used by **developers** to develop software **together**.
 
 ---
 <!-- _class: lead -->
 # Everyone **Should Sync to The Remote Server**
-![center](./images/git/git-simulation.png)
+![center](./../images/materi-java/git/git-simulation.png)
 
 ---
 # Git **Track** Every File Change
 <!-- _class: lead -->
-![w:200 center](./images/git/files.png)
+![w:200 center](./../images/materi-java/git/files.png)
 
 Your changes, John's changes and everyone changes can be tracked by git
 
@@ -100,7 +100,7 @@ $ cd myproject
 ---
 # **Staging** Area
 <!-- _class: lead -->
-![w:1000 center](./images/git/staging-area.png)
+![w:1000 center](./../images/materi-java/git/staging-area.png)
 
 ---
 # Commit **Message**
@@ -156,31 +156,31 @@ $ git branch -a
 
 ---
 # Pull **Request**
-![w:1150 center](./images/git/pull-request.png)
+![w:1150 center](./../images/materi-java/git/pull-request.png)
 
 ---
 # **Workflow** Collaboration
 <!-- _class: lead -->
-![w:400 center](./images/git/workflow.svg)
+![w:400 center](./../images/materi-java/git/workflow.svg)
 
 ---
 # Do you work like this?
 <!-- _class: lead -->
-![w:1100 center](./images/git/single-branch.png)
+![w:1100 center](./../images/materi-java/git/single-branch.png)
 
 ---
 # Or like this?
 <!-- _class: lead -->
-![w:1100 center](./images/git/feature-branch.png)
+![w:1100 center](./../images/materi-java/git/feature-branch.png)
 
 ---
 # The **best way** like this
 <!-- _class: lead -->
-![w:1100 center](./images/git/git-flow-branch.png)
+![w:1100 center](./../images/materi-java/git/git-flow-branch.png)
 
 ---
 # Let the **Master Branch** Undisturbed
-![w:600 center](./images/git/keep-master-undisturbed.png)
+![w:600 center](./../images/materi-java/git/keep-master-undisturbed.png)
 
 ```bash
 $ (master) git branch development
@@ -189,7 +189,7 @@ $ (master) git checkout development
 
 ---
 # Avoid **Direct Edit** on Development
-![w:320 center](./images/git/avoid-direct-edit-on-development.png)
+![w:320 center](./../images/materi-java/git/avoid-direct-edit-on-development.png)
 
 ```bash
 $ (development) git branch feature/new-feature
@@ -198,7 +198,7 @@ $ (development) git checkout feature/new-feature
 
 ---
 # Apply **Feature** into Development Only
-![w:700 center](./images/git/apply-feature-to-development.png)
+![w:700 center](./../images/materi-java/git/apply-feature-to-development.png)
 
 ```bash
 $ (feature/new-feature) git checkout development
@@ -209,7 +209,7 @@ $ (development) git merge feature/new-feature
 # Apply **Development** into Master
 **When it's already done**
 
-![w:900 center](./images/git/apply-development-to-master.png)
+![w:900 center](./../images/materi-java/git/apply-development-to-master.png)
 
 ```bash
 $ (master) git merge development
@@ -218,4 +218,4 @@ $ (master) git merge development
 ---
 # Any **Question**
 <!-- _class: lead -->
-![w:400 center](./images/question-mark.png)
+![w:400 center](./../images/question-mark.png)
