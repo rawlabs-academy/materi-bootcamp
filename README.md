@@ -7,7 +7,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
 ---
 
-![bg left:40% 60%](./materi-java/images/rawlabs-academy-logo.png)
+![bg left:40% 60%](./images/rawlabs-academy-logo.png)
 # **Rawlabs** Academy
 
 ---
