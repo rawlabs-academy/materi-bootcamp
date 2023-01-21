@@ -20,6 +20,8 @@ jobs:
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
           args: -I ./ -o ./build/ --allow-local-files --pptx
+        env:
+          MARP_USER: root:root
       - name: Deploy to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
