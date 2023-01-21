@@ -19,7 +19,7 @@ jobs:
       - name: Build presentation
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: -I ./ -o ./build/ --pptx
+          args: -I ./ -o ./build/ --allow-local-files --pptx
       - name: Deploy to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
