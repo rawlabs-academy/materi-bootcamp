@@ -16,8 +16,6 @@ Versioning Control and Branch Management
 ---
 <!-- _class: lead -->
 # What is Versioning?
-
-
 Control the source code version
 
 ---
