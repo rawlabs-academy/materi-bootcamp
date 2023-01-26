@@ -273,3 +273,19 @@ public class RXKing implements Motorcycle {
 - Think of it as a small set of public methods which any other class can call without **"knowing"** how they work
 </div>
 </div>
+
+---
+<style scoped>
+    p {
+        font-size: 0.85rem;
+    }
+</style>
+# Task
+Define 5 classes freely related to the type of animal, plant or vehicle. Use encapsulation concepts such as public, protected and private according to analogy examples in the real world.
+
+Example:
+`Cat, Fish, Flower, Car, etc.`
+
+Add instance variables and methods in each class created. Then create code to prove **encapsulation** is running as expected.
+
+For example, can `Frog` access these `public`, `protected` or `private` variables? or other things that produce returns as expected.
