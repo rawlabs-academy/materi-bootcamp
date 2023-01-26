@@ -349,8 +349,8 @@ Rawlabs Academy
 
 **Output**:
 Vowels: 5
-Consonants: 11
-Total: 16
+Consonants: 9
+Total: 14
 
 ---
 <style scoped>
