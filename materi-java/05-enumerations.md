@@ -138,3 +138,64 @@ public enum Color {
 ![h:300 center](../images/materi-java/enum-and-exceptions/error.png)
 
 ---
+# What is **Exceptions**?
+
+**Exception** is an abnormal condition.
+
+In Java, an exception is an event that **disrupts** the normal flow of the program. It is object which is **thrown at runtime**.
+
+---
+# Exception **Handling**
+
+Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+**Advantage** : Maintain the normal flow of the application.
+
+---
+![bg right:55% 90%](../images/materi-java/enum-and-exceptions/exception-hierarchy.png)
+# Exception **Hierarchy**
+The `java.lang.Throwable` class is the root class of Java Exception hierarchy inherited by two subclasses: Exception and Error
+
+---
+<!-- _class: lead -->
+# **Types** of Exception
+![h:500 center](../images/materi-java/enum-and-exceptions/types-of-exception-handling.png)
+
+---
+### **Checked** Exception
+
+- The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions.
+- Checked exceptions are **checked** at compile-time.
+
+Example:
+- `IOException`
+- `SQLException`
+- etc.
+
+---
+<style scoped>
+    p, ul {
+        font-size: 0.9rem;
+    }
+</style>
+### **Unchecked** Exception
+
+- The classes that inherit the RuntimeException are known as unchecked exceptions.
+- Unchecked exceptions are **not checked** at compile-time, but they are checked at runtime.
+
+Example:
+- `ArithmeticException`
+- `NullPointerException`
+- `ArrayIndexOutOfBoundsException`
+- etc.
+
+---
+### **Error**
+
+Error is **irrecoverable**.
+
+Example:
+- `OutOfMemoryError`
+- `VirtualMachineError`
+- `AssertionError `
+- etc.
