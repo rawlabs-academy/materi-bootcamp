@@ -5,7 +5,7 @@ paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
-style: @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css'); @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+style: @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 ---
 
 ![bg left:40% 60%](./../images/rawlabs-academy-logo.png)
@@ -99,18 +99,7 @@ public class Cat { // Define class name using CamelCase
 }
 ```
 ---
-<style scoped>
-    p {
-        font-size: 0.85rem;
-    }
-    ul {
-        font-size: 0.85rem;
-    }
-</style>
 #### Make instance of Object
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 ```java
 public class Cat {
     private String name;
@@ -131,33 +120,17 @@ public static void main(String[] args) {
     cat.getColor(); // White
 }
 ```
-</div>
-<div>
 
+---
+#### Cont...
 An instance is a unique copy of a **Class** that representing an **Object**.
 - All **classes** create **object**, and all **object** contain **characteristic** called **attribbutes**
 - Use `new Object()` for creating new object in Java.
 
 **Note:** You will never have to call the `new Object()` method; it gets called automatically when you create a new Cat object.
-</div>
-</div>
 
 ---
-<style scoped>
-    table {
-        font-size: 0.7rem;
-    },
-    .text-success {
-        color: #28a745!important
-    },
-    .text-danger {
-        color: #dc3545!important
-    }
-</style>
 ### Attributes Type
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 ```java
 public class Cat {
     private String name;
@@ -172,24 +145,25 @@ public class Cat {
     // Setter getter method
 }
 ```
-</div>
-<div>
-<br><br>
-
+---
+<style scoped>
+    .text-success {
+        color: #28a745!important
+    }
+    .text-danger {
+        color: #dc3545!important
+    }
+</style>
+### Cont...
 | Modifier | Class | Package | Subclass | World |
 |------|:------:|:------:|:------:|:------:|
 |public| <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> |
 | protected | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-times text-danger"></i> |
 | *no&nbsp;modifier** | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-times text-danger"></i> | <i class="fa fa-times text-danger"></i> |
 | private | <i class="fa fa-check text-success"></i> | <i class="fa fa-times text-danger"></i> | <i class="fa fa-times text-danger"></i> | <i class="fa fa-times text-danger"></i> |
-</div>
-</div>
 
 ---
 ### Method and Function
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 ```java
 public class Cat {
     private String name;
@@ -209,16 +183,13 @@ public class Cat {
     }
 }
 ```
-</div>
-<div>
+---
+### Cont...
 
 Important things when creating **Method** or **Function**:
 - Method name
 - Parameters
 - Returns
-</div>
-</div>
-
 ---
 ![bg right:45% 70%](../images/materi-java/oop/data-abstraction.png)
 # Data Abstraction
@@ -233,18 +204,7 @@ Main Goal:
 ![h:350](../images/materi-java/oop/data-abstraction-analogy.png) ![h:350](../images/materi-java/oop/data-abstraction-analogy-1.png)
 
 ---
-<style scoped>
-    p {
-        font-size: 0.85rem;
-    }
-    ul {
-        font-size: 0.85rem;
-    }
-</style>
 ### Data Abstraction - **Setter Getter**
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 ```java
 public interface Motorcycle {
     void startEngine();
@@ -264,15 +224,12 @@ public class RXKing implements Motorcycle {
     }
 }
 ```
-</div>
-<div>
-
+---
+### Cont...
 **Setter & Getter** make complex calculation in 1 function / method.
 - Hide all unnecessary process in object calling itself
 - Make simple calling from object variable
 - Think of it as a small set of public methods which any other class can call without **"knowing"** how they work
-</div>
-</div>
 
 ---
 <style scoped>

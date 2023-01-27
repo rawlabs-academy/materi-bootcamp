@@ -5,7 +5,6 @@ paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
-style: @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
 ---
 
 ![bg left:40% 60%](./../images/rawlabs-academy-logo.png)
@@ -15,14 +14,6 @@ style: @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
 Abstract Class, Abstract Method, Inheritence and Polymorphism
 
 ---
-<style scoped>
-    p {
-        font-size: 0.85rem;
-    }
-    ul {
-        font-size: 0.8rem;
-    }
-</style>
 # Abstract **Class** and **Method**
 <div class="grid grid-cols-2 gap-4">
 <div>
@@ -43,17 +34,14 @@ public class Java extends ProgrammingLanguage {
     }
 }
 ```
-</div>
-<div>
-
+---
+### Cont...
 **Abstract Class** :
 - Must be declared with `abstract` keyword
 - Can have abstract and non-abstract method
 - Can not be instantiated
 - Can have *constructor* and static method also
 - Can have final methods which will force the subclass not to change the body of the method
-</div>
-</div>
 
 ---
 ![bg right:40% 70%](../images/materi-java/oop/inheritance.png)
@@ -81,17 +69,7 @@ public class Java extends ProgrammingLanguage {
 ![h:400 center](../images/materi-java/oop/inheritance-analogy.png)
 
 ---
-<style scoped>
-    p {
-        font-size: 0.85rem;
-    }
-    ul {
-        font-size: 0.85rem;
-    }
-</style>
 ### Inheritence **Example**
-<div class="grid grid-cols-2 gap-4">
-<div>
 
 ```java
 public class Human {
@@ -112,15 +90,13 @@ public class Employee {
     }
 }
 ```
-</div>
-<div>
 
+---
+### Cont...
 ##### Pre save word **SUPER**
 **SUPER** is used to returns a proxy object that delegates method all to a parent or sibling class of type.
 
 **Method overriding** is used to overriding parent method
-</div>
-</div>
 
 ---
 <style scoped>
@@ -140,10 +116,6 @@ public class Employee {
 
 ---
 ### Polymorphism **Example**
-
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 ```java
 public interface Vehicle {
     void topSpeed();
@@ -163,8 +135,8 @@ public class Fuso implements Vehicle {
     }
 }
 ```
-</div>
-<div>
+---
+### Cont...
 
 ```java
 public class Avanza implements Vehicle {
@@ -183,15 +155,8 @@ public class Skyline implements Vehicle {
 
 
 ```
-</div>
-</div>
 
 ---
-<style scoped>
-    p {
-        font-size: 0.85rem;
-    }
-</style>
 ### Task **Abstract Class & Abstract Method**
 
 <div class="grid grid-cols-2 gap-4">
@@ -201,13 +166,10 @@ Create a simple calculator application with addition, subtraction, division and 
 
 Take advantage of the `input()` function in Java to `enter the desired 2 numbers` and **1 number in the form of an operation choice**. 
 
-Print the result of the operation at the end of the section like demo on the right side.
-</div>
-<div>
+Print the result of the operation at the end of the section like demo on the next slide.
 
-![h:500 center](../images/materi-java/oop/task-calculator.png)
-</div>
-</div>
+---
+![bg center: 50%](../images/materi-java/oop/task-calculator.png)
 
 ---
 <style scoped>
@@ -219,9 +181,6 @@ Print the result of the operation at the end of the section like demo on the rig
     }
 </style>
 ### Task **Inheritence & Polymorphism (Vehicles)**
-
-<div class="grid grid-cols-2 gap-4">
-<div>
 
 - `Vehicle` is a parent of all existing classes. And have property:
     - `name` : for object name
@@ -235,15 +194,11 @@ Print the result of the operation at the end of the section like demo on the rig
 - Class `Bus`
     -  `wheelCount`
     - `isPrivateBus` : flag bus is private or public
-- Every class have method `identifyMySelf()` that **overrides** from `Vehicle` to print out like demo on the right side
-</div>
-<div>
+- Every class have method `identifyMySelf()` that **overrides** from `Vehicle` to print out like demo on the next slide
 
-![w:600](../images/materi-java/oop/vehicle-tree.png)
-
-![w:600](../images/materi-java/oop/task-demo-vehicle.png)
-</div>
-</div>
+---
+![h:300](../images/materi-java/oop/vehicle-tree.png)
+![h:200](../images/materi-java/oop/task-demo-vehicle.png)
 
 ---
 <style scoped>
@@ -256,9 +211,6 @@ Print the result of the operation at the end of the section like demo on the rig
 </style>
 ### Task **Inheritence & Polymorphism (Animal)**
 
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 - `Animal` is a parent of all existing classes. And have property:
     - `name` : object name
     - `foodType` : type of food
@@ -270,12 +222,8 @@ Print the result of the operation at the end of the section like demo on the rig
 - Class `Carnivor`
     - Should eat meat
     - Should have sharp teeth
-- Every class have method `identifyMySelf()` that **overrides** from `Animal` to print out like demo on the right side
-</div>
-<div>
+- Every class have method `identifyMySelf()` that **overrides** from `Animal` to print out like demo on the next slide
 
-![w:600](../images/materi-java/oop/animal-tree.png)
-
-![w:600](../images/materi-java/oop/task-demo-animal.png)
-</div>
-</div>
+---
+![h:300](../images/materi-java/oop/animal-tree.png)
+![h:150](../images/materi-java/oop/task-demo-animal.png)
