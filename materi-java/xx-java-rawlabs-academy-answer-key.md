@@ -14,8 +14,6 @@ Example :
   <img height="600px" src="../images/answer-key/java/introduction-algorithm.png"/>
 </p>
 
-***
-
 ## Basic Programming
 
 ### **Task 1**
