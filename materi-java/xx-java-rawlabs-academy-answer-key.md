@@ -104,3 +104,156 @@ public class Palindrome {
 
 }
 ```
+
+## Object Oriented Programming (OOP) - Basic
+### **Task**
+Define 5 classes freely related to the type of animal, plant or vehicle. Use encapsulation concepts such as public, protected and private according to analogy examples in the real world.
+
+Example:
+`Cat, Fish, Flower, Car, etc.`
+
+Add instance variables and methods in each class created. Then create code to prove **encapsulation** is running as expected.
+
+For example, can `Frog` access these `public`, `protected` or `private` variables? or other things that produce returns as expected.
+
+```
+.
+└── main/
+    └── participant/
+        ├── MainParticipant.java
+        ├── Mentee.java
+        └── Person.java
+    └── program/
+        ├── BootcampProgram.java
+        ├── Java.java
+        └── MainProgram.java
+    └── Main.java
+```
+
+**Package of** `main.participant`
+
+```java
+package main.participant;
+
+public class Person {
+    private String name;
+    protected String gender;
+
+    public void sayHello() {
+        System.out.println("Hello I'm from public method. I can be called anywhere!");
+    }
+
+    protected void getHobby() {
+        System.out.println("My hobby is coding. I can be called from sub-class");
+    }
+
+    // Setter Getter method
+}
+```
+
+```java
+package main.participant;
+
+public class Mentee extends Person {
+    private String bootcampProgram;
+
+    // Setter Getter Method
+}
+```
+
+```java
+package main.participant;
+
+public class MainParticipant {
+    public static void main(String[] args) {
+        Mentee mentee = new Mentee();
+
+        /*
+        This class can call directly the protected method of Person -> getHobby()
+        Also can be direct access the gender attribute
+         */
+        mentee.getHobby();
+        mentee.gender = "Male";
+
+        System.out.println("Gender is = " + mentee.gender);
+    }
+}
+```
+
+Package of `main.program`
+
+```java
+package main.program;
+
+public class BootcampProgram {
+    private String programName;
+    protected Integer batch;
+
+    // Setter Getter method
+}
+```
+
+```java
+package main.program;
+
+public class Java extends BootcampProgram {
+    private Integer totalSyllabus;
+
+    // Setter Getter method
+}
+```
+
+```java
+package main.program;
+
+public class MainParticipant {
+    public static void main(String[] args) {
+        Mentee mentee = new Mentee();
+
+        /*
+        This class can call directly the protected method of Person -> getHobby()
+        Also can be direct access the gender attribute
+         */
+        mentee.getHobby();
+        mentee.gender = "Male";
+
+        System.out.println("Gender is = " + mentee.gender);
+    }
+}
+```
+
+**Package of** `main`
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        /*
+        The protected method of BootcampProgram can't be direct accessed by Java because different package
+        Should use setter and getter method
+         */
+        Java java = new Java();
+        java.setProgramName("Backend Java");
+        java.setBatch(1);
+        java.setTotalSyllabus(30);
+
+        System.out.println("Program Name = " + java.getProgramName());
+        System.out.println("Batch = " + java.getBatch());
+        System.out.println("Total Syllabus = " + java.getTotalSyllabus());
+
+        System.out.println("==============================");
+
+        Mentee mentee = new Mentee();
+        /*
+        Method sayHello() can be direct access because it has public modifier
+         */
+        mentee.sayHello();
+        mentee.setBootcampProgram("Backend Java");
+        mentee.setName("Calvin");
+        mentee.setGender("Male");
+
+        System.out.println("Mentee Name = " + mentee.getName());
+        System.out.println("Gender = " + mentee.getGender());
+        System.out.println("Bootcamp Program = " + mentee.getBootcampProgram());
+    }
+}
+```
