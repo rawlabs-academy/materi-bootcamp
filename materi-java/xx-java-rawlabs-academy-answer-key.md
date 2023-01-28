@@ -2,7 +2,7 @@
 Java Answer Key of **Rawlabs Academy**
 
 ## Introduction Algorithm
-#### **Task**
+### **Task**
 A prime number is a natural number that is greater than 1, whose divisors are **1** and the **number itself**. The numbers **2** and **3** are **prime numbers**. The number 4 is not a prime number because it can be divided by 2.  *Create a function to determine whether the inputted number is a prime number or not using [Whimsical](https://whimsical.com)*. 
 
 Example :
