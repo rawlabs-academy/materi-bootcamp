@@ -19,7 +19,7 @@ Example :
 
 ## Basic Programming
 
-#### **Task 1**
+### **Task 1**
 Counts the number of characters in the form of vowels, consonants and total characters from the sentence *"Rahwlabs Academy"*.
 
 **Input**: 
@@ -65,7 +65,7 @@ public class VocalConsonant {
 }
 ```
 
-#### **Task 2**
+### **Task 2**
 **Palindrome** is a word, number, phrase, or other sequence of symbols that reads the same backwards as forwards. Write a program to detect whether a string is a palindrome or not.
 
 Input: **katak** \
