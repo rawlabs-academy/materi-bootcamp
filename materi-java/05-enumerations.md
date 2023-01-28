@@ -199,3 +199,95 @@ Example:
 - `VirtualMachineError`
 - `AssertionError `
 - etc.
+
+---
+<style scoped>
+    table {
+        font-size: 0.85rem;
+    }
+</style>
+### Keywords
+
+| Keyword | Description |
+|:-------:|-------------|
+| `try` | Specify a block where we should place an exception code |
+| `catch` | Handle the exception. It must be preceded by try block which means we **can't** use catch block alone |
+| `finally` | Execute the necessary code of the program. It is executed whether an exception is handled or not |
+| `throw` | Throw an exception |
+| `throws` | Declare exceptions, it specifies that there may occur an exception in the method. It doesn't throw an exception. It is always used with method signature.
+
+---
+### **Exception Handling** Example
+
+```java
+public static void main(String[] args) {
+    int value = 0;
+    try {
+        System.out.println("This code should be throw an ArithmeticException");
+        value = 100/0;
+    } catch (ArithmeticException e) {
+        System.out.println(e);
+    }
+
+    System.out.println("Code ended by ArithmeticException");
+    System.out.println("Value still :: " + value);
+}
+```
+
+---
+### **Custom** Exception
+
+```java
+public class MyCustomException extends Exception {
+    private String message;
+
+    public MyCustomException(String message) {
+        super();
+        this.message = message;
+    }
+}
+```
+
+---
+### Cont...
+```java
+public static void main(String[] args) {
+    try {
+        System.out.println("I will be throw a new MyCustomException");
+        throw new MyCustomException("Hello world!!!");
+        System.out.println("This code not executed.");
+    } catch (MyCustomException e) {
+        System.out.println("Exception message is :: ", e.getMessage());
+    } finally {
+        System.out.println("Finally block, will be execute in the end process");
+    }
+}
+```
+
+---
+<style scoped>
+    p, pre {
+        font-size: 0.8rem
+    }
+</style>
+### Task
+
+Create a method to check **Boba drink** payment if the payment is less than the price then throw a custom exception. And make validation if the selected **Boba menu** does not match the enum, then throw a custom exception with a message. 
+
+**Note**: Take advantage of user input
+
+```text
+Input Boba menu : Boba Tea
+Input Size : REGULAR
+Input payment : 120000
+
+Your amount is less than price!
+```
+
+```text
+Input Boba menu : EXTRA_SMALL
+Input Size: EXTRA_LARGE
+
+Invalid pizza size!
+Available size : [SMALL, REGULAR, LARGE]
+```
