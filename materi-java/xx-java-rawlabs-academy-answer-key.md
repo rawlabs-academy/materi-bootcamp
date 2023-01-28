@@ -10,7 +10,6 @@ Example :
 - Input: 7, Output: Prime Number
 - Input: 10, Output: Not Prime Number
 
-**Answer**
 <p align="left">
   <img height="600px" src="../images/answer-key/java/introduction-algorithm.png"/>
 </p>
@@ -29,8 +28,6 @@ Rawlabs Academy
 Vowels: 5
 Consonants: 9
 Total: 14
-
-**Answer**
 
 ```java
 public class VocalConsonant {
@@ -76,8 +73,6 @@ Output: Not Palindrome
 
 Input: **kasur rusak** \
 Output: Palindrome
-
-**Answer**
 
 ```java
 public class Palindrome {
