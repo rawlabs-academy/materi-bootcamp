@@ -15,9 +15,6 @@ Abstract Class, Abstract Method, Inheritence and Polymorphism
 
 ---
 # Abstract **Class** and **Method**
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 ```java
 abstract class ProgrammingLanguage {
     abstract void describe();
