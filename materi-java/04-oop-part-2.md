@@ -56,8 +56,6 @@ public class Java extends ProgrammingLanguage {
 - Object are often very similar. They share common logic.
 - But, they're not entirely the same
 
-<hr>
-
 > ***What if we put common logic in one class, and unique logic of every object in their own class? Is that save your life from creating bunch of code in one class***
 
 ---
@@ -66,6 +64,11 @@ public class Java extends ProgrammingLanguage {
 ![h:400 center](../images/materi-java/oop/inheritance-analogy.png)
 
 ---
+<style scoped>
+    pre {
+        font-size: 0.8rem;
+    }
+</style>
 ### Inheritence **Example**
 
 ```java
@@ -112,6 +115,11 @@ public class Employee {
 - **The behavior** of object can be implemented at runtime
 
 ---
+<style scoped>
+    pre {
+        font-size: 0.8rem;
+    }
+</style>
 ### Polymorphism **Example**
 ```java
 public interface Vehicle {
@@ -149,8 +157,6 @@ public class Skyline implements Vehicle {
         System.out.println("320 km/h");
     }
 }
-
-
 ```
 
 ---

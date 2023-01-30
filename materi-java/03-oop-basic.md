@@ -5,7 +5,6 @@ paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
-style: @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 ---
 
 ![bg left:40% 60%](./../images/rawlabs-academy-logo.png)
@@ -99,6 +98,11 @@ public class Cat { // Define class name using CamelCase
 }
 ```
 ---
+<style scoped>
+    pre {
+        font-size: 0.8rem;
+    }
+</style>
 #### Make instance of Object
 ```java
 public class Cat {
@@ -146,23 +150,20 @@ public class Cat {
 }
 ```
 ---
-<style scoped>
-    .text-success {
-        color: #28a745!important
-    }
-    .text-danger {
-        color: #dc3545!important
-    }
-</style>
 ### Cont...
 | Modifier | Class | Package | Subclass | World |
 |------|:------:|:------:|:------:|:------:|
-|public| <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> |
-| protected | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-times text-danger"></i> |
-| *no&nbsp;modifier** | <i class="fa fa-check text-success"></i> | <i class="fa fa-check text-success"></i> | <i class="fa fa-times text-danger"></i> | <i class="fa fa-times text-danger"></i> |
-| private | <i class="fa fa-check text-success"></i> | <i class="fa fa-times text-danger"></i> | <i class="fa fa-times text-danger"></i> | <i class="fa fa-times text-danger"></i> |
+|public| ✓ | ✓ | ✓ | ✓ |
+| protected | ✓ | ✓ | ✓ | ❌ |
+| *no&nbsp;modifier** |✓ | ✓ | ❌ | ❌ |
+| private | ✓ | ❌ | ❌ | ❌ |
 
 ---
+<style scoped>
+    pre {
+        font-size: 0.8rem;
+    }
+</style>
 ### Method and Function
 ```java
 public class Cat {
@@ -204,6 +205,11 @@ Main Goal:
 ![h:350](../images/materi-java/oop/data-abstraction-analogy.png) ![h:350](../images/materi-java/oop/data-abstraction-analogy-1.png)
 
 ---
+<style scoped>
+    pre {
+        font-size: 0.8rem;
+    }
+</style>
 ### Data Abstraction - **Setter Getter**
 ```java
 public interface Motorcycle {
