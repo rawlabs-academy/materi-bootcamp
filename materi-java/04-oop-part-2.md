@@ -161,10 +161,6 @@ public class Skyline implements Vehicle {
 
 ---
 ### Task **Abstract Class & Abstract Method**
-
-<div class="grid grid-cols-2 gap-4">
-<div>
-
 Create a simple calculator application with addition, subtraction, division and multiplication functions. 
 
 Take advantage of the `input()` function in Java to `enter the desired 2 numbers` and **1 number in the form of an operation choice**. 
