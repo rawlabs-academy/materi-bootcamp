@@ -25,15 +25,12 @@ The application will include customer apps to view listing and book a working sp
 
 **User details :**
 - Customer / Buyer
-- Admin
-- Operator
 
 ---
 ### Key **Activities**
 
-| Customer Apps | Admin / Operator (Postman) |
-|:--------------|:----------------|
-| Search room / working space | Manage room / working space |
-| Booking working space via apps | Manage room schedule |
-| Submit Review | Manage customer data |
-| Login / Registration User | Manage User (**Admin Only**) |
+- Search room / working space
+- Booking working space via apps
+- Submit Review
+- Login / Registration User
+- View / Edit Profile
