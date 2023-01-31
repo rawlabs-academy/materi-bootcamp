@@ -257,3 +257,322 @@ public class Main {
     }
 }
 ```
+
+## Abstract, Inheritence Polymorphism (OOP)
+### Task
+Create a simple calculator application with addition, subtraction, division and multiplication functions. 
+
+Take advantage of the `input()` function in Java to `enter the desired 2 numbers` and **1 number in the form of an operation choice**. 
+
+Print the result of the operation at the end of the section like demo on the next slide.
+
+```java
+public class MainClass {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.openCalculator();
+    }
+}
+
+class Calculator extends InputOutput implements Arithmetic {
+
+    @Override
+    public Integer sum(int a, int b) {
+        return a + b;
+    }
+
+    @Override
+    public Integer subtract(int a, int b) {
+        return a - b;
+    }
+
+    @Override
+    public Integer multiply(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    public Integer divide(int a, int b) {
+        return a / b;
+    }
+
+    @Override
+    void openCalculator() {
+        System.out.println(this.header);
+        System.out.println("1: Open Calculator");
+        System.out.println("99: Exit");
+        System.out.print("Input Choice : ");
+        int menu = input.nextInt();
+        if (menu == 1) {
+            inputValueCalculator();
+        }
+    }
+
+    @Override
+    void inputValueCalculator() {
+        System.out.println(header);
+        System.out.print("Input value 1 : ");
+        int a = input.nextInt();
+        System.out.print("Input value 2 : ");
+        int b = input.nextInt();
+        menuCalculator(a, b);
+    }
+
+    @Override
+    void menuCalculator(int a, int b) {
+        System.out.println(header);
+        System.out.println("1. Add Value");
+        System.out.println("2. Subtract Value");
+        System.out.println("3. Multiply Value");
+        System.out.println("4. Divide Value");
+        System.out.println(header);
+        System.out.println("Select operation : ");
+        Integer n = input.nextInt();
+        Integer result = 0;
+        if (n == 1) {
+            result = sum(a, b);
+        } else if (n == 2) {
+            result = subtract(a, b);
+        } else if (n == 3) {
+            result = multiply(a, b);
+        } else if (n == 4) {
+            result = divide(a, b);
+        } else {
+            System.out.println("Invalid Menu");
+            return;
+        }
+        outputValueCalculator(n, result);
+    }
+
+    @Override
+    void outputValueCalculator(int menu, int result) {
+        System.out.println(header);
+        System.out.println("Operation : " + menu);
+        System.out.println("Result : " + result);
+    }
+
+}
+
+abstract class InputOutput {
+
+    protected String header = "+++++++++++++ CALCULATOR +++++++++++++";
+    protected Scanner input = new Scanner(System.in);
+
+    abstract void openCalculator();
+    abstract void inputValueCalculator();
+    abstract void menuCalculator(int a, int b);
+    abstract void outputValueCalculator(int menu, int result);
+
+}
+
+interface Arithmetic {
+
+    Integer sum(int a, int b);
+    Integer subtract(int a, int b);
+    Integer multiply(int a, int b);
+    Integer divide(int a, int b);
+
+}
+```
+
+### Task
+
+- `Vehicle` is a parent of all existing classes. And have property:
+    - `name` : for object name
+    - `isUseEngine` : flag object if has engine or not
+- `Bike`, `Car` and `Bus` is a child from `Vehicle`
+- Class `Bike`
+    - `wheelCount` : number of wheels owned
+- Class `Car`
+    - `wheelCount`
+    - `engineType` : type of engine
+- Class `Bus`
+    -  `wheelCount`
+    - `isPrivateBus` : flag bus is private or public
+- Every class have method `identifyMySelf()` that **overrides** from `Vehicle` to print out like demo on the next slide
+
+```java
+public class MainClass {
+    public static void main(String[] args) {
+        Vehicle pedalBike = new Bike("Pedal Bike", Boolean.FALSE, 2);
+        pedalBike.identityMyself();
+        System.out.println();
+
+        Vehicle motorBike = new Bike("Motor Bike", Boolean.TRUE, 2);
+        motorBike.identityMyself();
+        System.out.println();
+
+        Vehicle cityCar = new Car("City Car", Boolean.TRUE, 4, "4 Cylinder");
+        cityCar.identityMyself();
+        System.out.println();
+
+        Vehicle sportCar = new Car("Sport Car", Boolean.TRUE, 4, "12-V Cylinder");
+        sportCar.identityMyself();
+        System.out.println();
+
+        Vehicle transBus = new Bus("Public Bus", Boolean.TRUE, 6, Boolean.FALSE);
+        transBus.identityMyself();
+        System.out.println();
+
+        Vehicle schoolBus = new Bus("Private Bus", Boolean.TRUE, 6, Boolean.TRUE);
+        schoolBus.identityMyself();
+        System.out.println();
+    }
+}
+
+class Vehicle {
+    protected String name;
+    protected boolean isUseEngine;
+
+    public Vehicle(String name, boolean isUseEngine) {
+        this.name = name;
+        this.isUseEngine = isUseEngine;
+    }
+
+    public void identityMyself() {
+        System.out.println("Hi I'm Parent of All Vehicles, My name is " + this.name + ", My Engine Status is '" + (this.isUseEngine ? "with engine" : "no engine") + "'");
+    }
+}
+
+class Bike extends Vehicle{
+
+    protected Integer wheelCount;
+
+    public Bike(String name, boolean isUseEngine, Integer wheelCount) {
+        super(name, isUseEngine);
+        this.wheelCount = wheelCount;
+    }
+
+    @Override
+    public void identityMyself() {
+        System.out.println("Hi I'm Bike , My name is " + this.name + ", My Engine Status is '"
+                + (this.isUseEngine ? "with engine" : "no engine") + "', I have " + this.wheelCount + " Wheel(s)");
+    }
+}
+
+class Bus extends Vehicle {
+
+    protected Integer wheelCount;
+    protected boolean isPrivateBus;
+
+    public Bus(String name, boolean isUseEngine, Integer wheelCount, boolean isPrivateBus) {
+        super(name, isUseEngine);
+        this.wheelCount = wheelCount;
+        this.isPrivateBus = isPrivateBus;
+    }
+
+    @Override
+    public void identityMyself() {
+        System.out.println("Hi I'm Bus [" + (this.isPrivateBus ? "Private Bus" : "Public Bus") + "] , My name is "
+                + this.name + ", My Engine Status is '" + (this.isUseEngine ? "with engine" : "no engine")
+                + "', I have " + this.wheelCount + " Wheel(s)");
+    }
+}
+
+class Car extends Vehicle {
+
+    protected Integer wheelCount;
+    protected String engineType;
+
+    public Car(String name, boolean isUseEngine, Integer wheelCount, String engineType) {
+        super(name, isUseEngine);
+        this.wheelCount = wheelCount;
+        this.engineType = engineType;
+    }
+
+    @Override
+    public void identityMyself() {
+        System.out.println("Hi I'm Car , My name is " + this.name + ", My Engine Status is '"
+                + (this.isUseEngine ? "with engine" : "no engine") + "', I have " + this.wheelCount
+                + " Wheel(s), My Engine Type = " + this.wheelCount);
+    }
+}
+```
+
+### Task
+- `Animal` is a parent of all existing classes. And have property:
+    - `name` : object name
+    - `foodType` : type of food
+    - `isSharpTeeth` : flag teeth is sharp or blunt
+- `Herbivor`, `Carnivor` and `Omnivor` is a child from `Animal`
+- Class `Herbivor`
+    - Should eat plants
+    - Should have blunt teeth
+- Class `Carnivor`
+    - Should eat meat
+    - Should have sharp teeth
+- Every class have method `identifyMySelf()` that **overrides** from `Animal` to print out like demo on the next slide
+
+```java
+public class MainClass {
+    public static void main(String[] args) {
+        Animal animal = new Animal("Animal", "All", "Sharp and Blunt");
+        animal.identityMySelf();
+        System.out.println();
+
+        Animal herbivor = new Herbivor("Cow");
+        herbivor.identityMySelf();
+        System.out.println();
+
+        Animal carnivor = new Carnivor("Tiger");
+        carnivor.identityMySelf();
+        System.out.println();
+
+        Animal omnivor = new Omnivor("Cat");
+        omnivor.identityMySelf();
+        System.out.println();
+    }
+}
+
+class Animal {
+    protected String name;
+    protected String foodType;
+    protected String toothType;
+
+    public Animal(String name, String foodType, String toothType) {
+        this.name = name;
+        this.foodType = foodType;
+        this.toothType = toothType;
+    }
+
+    public void identityMySelf() {
+        System.out.println("Hi I'm Parent of All Animal, My name is " + this.name);
+    }
+}
+
+class Herbivor extends Animal {
+    public Herbivor(String name) {
+        super(name, "Plants", "Blunt");
+    }
+
+    @Override
+    public void identityMySelf() {
+        System.out.println("Hi I'm Herbivor , My Name is " + this.name + ", My Food is '"
+                + this.foodType + "', I have " + this.toothType + " teeth");
+    }
+}
+
+class Carnivor extends Animal {
+    public Carnivor(String name) {
+        super(name, "Meat", "Sharp");
+    }
+
+    @Override
+    public void identityMySelf() {
+        System.out.println("Hi I'm Carnivor , My Name is " + this.name + ", My Food is '"
+                + this.foodType + "', I have " + this.toothType + " teeth");
+    }
+}
+
+class Omnivor extends Animal {
+    public Omnivor(String name) {
+        super(name, "Meat and Plants", "Sharp and Blunt");
+    }
+
+    @Override
+    public void identityMySelf() {
+        System.out.println("Hi I'm Omnivor , My Name is " + this.name + ", My Food is '"
+                + this.foodType + "', I have " + this.toothType + " teeth");
+    }
+}
+```
