@@ -21,7 +21,7 @@ Rawlabs Academy
 ---
 ### Project **Scope**
 
-The application will include customer apps to view listing and book a working space. Also **backend** has admin portal to manage working space via **postman**. Customer **only** can rent for working hour (**8 a.m to 5 p.m**)
+The application will include customer apps to view listing and book a working space. Customer **only** can rent for working hour (**8 a.m to 5 p.m**)
 
 **User details :**
 - Customer / Buyer
