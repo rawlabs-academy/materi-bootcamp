@@ -47,4 +47,4 @@ marp: true
 | Code Structure | **30%** |
 | Spring Security **(JWT)** | **25%** |
 | Unit Testing | **25%** |
-| 3rd Party API (Optional) | **5%** |
+| 3rd Party API **(Optional)** | **5%** |
