@@ -288,6 +288,6 @@ Your amount is less than price!
 Input Boba menu : EXTRA_SMALL
 Input Size: EXTRA_LARGE
 
-Invalid pizza size!
+Invalid boba size!
 Available size : [SMALL, REGULAR, LARGE]
 ```
