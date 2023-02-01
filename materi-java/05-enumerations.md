@@ -239,11 +239,8 @@ public static void main(String[] args) {
 
 ```java
 public class MyCustomException extends Exception {
-    private String message;
-
     public MyCustomException(String message) {
-        super();
-        this.message = message;
+        super(message);
     }
 }
 ```
