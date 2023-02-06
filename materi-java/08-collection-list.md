@@ -18,7 +18,7 @@ Rawlabs Academy
 
 - The `List` interface provides a way to **store** and **ordered collection**.
 - It is a **child interface** of `Collection`
-- t is an ordered collection of object in which **duplicate values** can be stored.
+- It is an ordered collection of object in which **duplicate values** can be stored.
 
 - Since `List` preserves the insertion order, it allows **positional access** and **insertion of elements**.
 
@@ -73,7 +73,7 @@ This class provides a skeletal implementation of the `List` interface to minimiz
 
 Its provides us with **dynamic arrays** in java. Though, it may be slower than standard arrays but can be helpful in programs where **lots of manipulation** in the array needed.
 
-![w:650](../images/materi-java/iterable-and-collection/arraylist.png)
+![w:630](../images/materi-java/iterable-and-collection/arraylist.png)
 
 ---
 ![bg right:60% 50%](../images/materi-java/iterable-and-collection/arraylist-work.png)
