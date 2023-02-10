@@ -172,12 +172,12 @@ Create a method to identify the unique value between 2 array of different type u
 
 ---
 <style scoped>
-    pre {
+    pre, p {
         font-size: 0.8rem;
     }
 </style>
 ### Task - **Generic Class**
-Create class like the output json below using **generic class**.
+Create class like the output json below using **generic class**. The `data` is generic type that can be used for `String`, `Integer`, `Object`, `List`, etc.
 
 ```json
 {
