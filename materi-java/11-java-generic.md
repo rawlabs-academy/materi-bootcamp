@@ -167,8 +167,8 @@ Create a method to identify the unique value between 2 array of different type u
 **Test Case :**
 - Input : `[1, 2, 3, 4]` and `[1, 3, 5, 10, 16]`
   Output : `[2, 4, 5, 10, 16]`
-- Input : `[3, 8]` and `[2, 8]`
-  Output : `[3, 2]`
+- Input : `["one", "two"]` and `["two", "six"]`
+  Output : `["one", "six"]`
 
 ---
 <style scoped>
