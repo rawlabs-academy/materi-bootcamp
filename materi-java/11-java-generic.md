@@ -162,7 +162,7 @@ public static void main(String[] args) {
 
 ---
 ## Task - **Array Unique**
-Create a method to identify the unique value between 2 array of different type using single generic method.
+Create a method to identify the unique value between 2 array of different type using single **generic method**.
 
 **Test Case :**
 - Input : `[1, 2, 3, 4]` and `[1, 3, 5, 10, 16]`
@@ -177,7 +177,7 @@ Create a method to identify the unique value between 2 array of different type u
     }
 </style>
 ### Task - **Generic Class**
-Create class like the output json below using generic class.
+Create class like the output json below using **generic class**.
 
 ```json
 {
