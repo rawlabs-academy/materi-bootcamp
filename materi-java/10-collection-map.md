@@ -44,7 +44,7 @@ public class Main {
         map.put(2, "Joe");
         map.put(3, "Maverick");
 
-        for (Map.Entry m : map.entrySet()) {
+        for (Map.Entry<Integer, String> m : map.entrySet()) {
             System.out.println(m.getKey() + " :: " + m.getValue());
         }
     }
