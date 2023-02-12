@@ -27,7 +27,7 @@ Rawlabs Academy
 - Suppose, fi one reference variable changes the value of the object, it will be affected to al the reference variables. That is why string objects are immutable in java.
 
 ---
-### Example
+### Example 1
 
 ```java
 public class Main {
@@ -47,7 +47,7 @@ The `concat()` method is append the string at the end. So, `String` are immutabl
 ![left h:580](../images/materi-java/strings/string-constant-pool.png)
 
 ---
-### Cont...
+### Example 2
 
 ```java
 public class Main {
@@ -62,3 +62,24 @@ public class Main {
 Output : `Java Programming`
 
 So, it assign it into the **reference variable**.
+
+---
+## **Methods**
+- `charAt()`, `contains()`
+
+---
+### Example 3 - **subString()**
+
+- `substring(int index)` the parameter is start / begin index
+- `subString(int start, int end)`
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        String s = new String();
+        s = "Java Programming";
+        System.out.println(s.subString(5));
+        System.out.println(s.subString(0, 5));
+    }
+}
+```
