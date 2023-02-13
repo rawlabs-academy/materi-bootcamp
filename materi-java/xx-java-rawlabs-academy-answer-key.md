@@ -1,7 +1,18 @@
 # Java Answer Key
 Java Answer Key of **Rawlabs Academy**
 
-## Introduction Algorithm
+## Table of Contents
+- [01 - Introduction Algorithm](#01---introduction-algorithm)
+- [02 - Basic Programming](#02---basic-programming)
+- [03 - Object Oriented Programming (OOP) - Basic](#03---object-oriented-programming--oop----basic)
+- [04 - Abstract, Inheritence Polymorphism (OOP)](#04---abstract--inheritence-polymorphism--oop-)
+- [05 - Enumeration](#05---enumeration)
+- [06 - Array](#06---array)
+- [07 - Iterrable and Collection](#07---iterrable-and-collection)
+- [08 - Collection List](#08---collection-list)
+
+
+## 01 - Introduction Algorithm
 ### **Task**
 A prime number is a natural number that is greater than 1, whose divisors are **1** and the **number itself**. The numbers **2** and **3** are **prime numbers**. The number 4 is not a prime number because it can be divided by 2.  *Create a function to determine whether the inputted number is a prime number or not using [Whimsical](https://whimsical.com)*. 
 
@@ -14,7 +25,7 @@ Example :
   <img height="600px" src="../images/answer-key/java/introduction-algorithm.png"/>
 </p>
 
-## Basic Programming
+## 02 - Basic Programming
 
 ### **Task 1**
 Counts the number of characters in the form of vowels, consonants and total characters from the sentence *"Rahwlabs Academy"*.
@@ -105,7 +116,7 @@ public class Palindrome {
 }
 ```
 
-## Object Oriented Programming (OOP) - Basic
+## 03 - Object Oriented Programming (OOP) - Basic
 ### **Task**
 Define 5 classes freely related to the type of animal, plant or vehicle. Use encapsulation concepts such as public, protected and private according to analogy examples in the real world.
 
@@ -157,7 +168,7 @@ package main.participant;
 public class Mentee extends Person {
     private String bootcampProgram;
 
-    // Setter Getter Method
+    // Setter Getter method
 }
 ```
 
@@ -258,7 +269,7 @@ public class Main {
 }
 ```
 
-## Abstract, Inheritence Polymorphism (OOP)
+## 04 - Abstract, Inheritence Polymorphism (OOP)
 ### Task
 Create a simple calculator application with addition, subtraction, division and multiplication functions. 
 
@@ -576,3 +587,319 @@ class Omnivor extends Animal {
     }
 }
 ```
+
+## 05 - Enumeration
+### Task
+
+Create a method to check **Boba drink** payment if the payment is less than the price then throw a custom exception. And make validation if the selected **Boba menu** does not match the enum, then throw a custom exception with a message. 
+
+**Note**: Take advantage of user input
+
+```text
+Input Boba menu : Boba Tea
+Input Size : REGULAR
+Input payment : 10000
+
+Exception in thread "main" InvalidAmountException: Your amount is less than price!
+```
+
+```text
+Input Boba menu : Boba Tea
+Input Size: EXTRA_LARGE
+
+Exception in thread "main" InvalidBobaSizeException: Invalid boba size!
+Available boba size: [REGULAR, LARGE]
+```
+
+File `BobaSize.java`
+```java
+public enum BobaSize {
+    REGULAR(12000),
+    LARGE(15000);
+
+    private final Integer price;
+
+    BobaSize(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+}
+```
+
+File `InvalidAmountException.java`
+```java
+public class InvalidAmountException extends RuntimeException {
+    public InvalidAmountException(String message) {
+        super(message);
+    }
+}
+```
+
+File `InvalidBobaSizeException.java`
+```java
+public class InvalidBobaSizeException extends RuntimeException {
+    public InvalidBobaSizeException(String message) {
+        super(message);
+    }
+
+    @Override
+    public String getMessage() {
+        return super.getMessage() + "\nAvailable boba size: " + Arrays.toString(BobaSize.values());
+    }
+}
+```
+
+File `Main.java`
+```java
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input Boba menu : ");
+        String bobaMenu = sc.nextLine();
+
+        System.out.print("Input Size : ");
+        String size = sc.nextLine();
+
+        BobaSize bobaSize;
+
+        try {
+            bobaSize = BobaSize.valueOf(size);
+        } catch (Exception e) {
+            System.out.println();
+            throw new InvalidBobaSizeException("Invalid boba size!");
+        }
+
+        System.out.print("Input Payment : ");
+        Integer amount = sc.nextInt();
+        sc.close();
+
+        if (amount <= bobaSize.getPrice()) {
+            System.out.println();
+            throw new InvalidAmountException("Your amount is less than price!");
+        }
+
+    }
+}
+```
+
+## 06 - Array
+### Task 1 - Check **Prime Number**
+Given an array `[2, 4, 8, 7, 9, 13, 11, 29, 18, 29, 34, 15, 17]`, create a function to check whether the numbers in the array are **prime** or not.
+
+Expected Output:
+- When prime number, print **x is Prime Number**.
+- When not prime number, print **x is not Prime Number**.
+
+```java
+public class Main {
+
+    static boolean isPrimeNumber(Integer number) {
+        if (number == 1) {
+            return false;
+        }
+        for (int i = 2; i < number; i++) {
+            if (number%i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 8, 7, 9, 13, 11, 29, 18, 29, 34, 15, 17};
+        for (int i = 0; i < arr.length; i++) {
+            int number = arr[i];
+            if (isPrimeNumber(number)) System.out.println(number + " is Prime Number");
+            else System.out.println(number + " is not Prime Number");
+        }
+    }
+}
+```
+
+### Task 2 - Play with **Asterisk**
+Write a program to print the **asterisk triangle** as shown below.
+
+**Input:** 5
+
+**Output:**
+```bash
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * *
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input : ");
+        int total = input.nextInt();
+
+        for (int i = 1; i <= total; i++) {
+            for (int j = total-1; j >= i; j--) {
+                System.out.print(' ');
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+}
+```
+
+### Task 3 - **Multiply Table**
+
+Write program to print table of multiply based on user input as shown below.
+
+**Input :** 6
+
+**Output :**
+```bash
+1	2	3	4	5	6	
+2	4	6	8	10	12	
+3	6	9	12	15	18	
+4	8	12	16	20	24	
+5	10	15	20	25	30	
+6	12	18	24	30	36
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input : ");
+        int total = input.nextInt();
+
+        for (int i = 1; i <= total; i++) {
+            for (int j = 1; j <= total; j++) {
+                Integer result = i * j;
+                System.out.print(result + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+}
+```
+
+### Task 4 - **Searching** (Bonus)
+Given `Person` data
+
+| NIK | Name |
+|:----|:-----|
+| 0001 | Calvin |
+| 0002 | Joe |
+| 0003 | Maverick |
+| 0004 | Kirito |
+| 0005 | Andrew |
+
+Write program to search `Person` by `name` **OR** by `nik`.
+
+Test Case
+- Input : `Joe`, Output : `Found data [Joe 0002]`
+- Input : `0004`, Output : `Found data at [Kirito 0004]`
+- Input : `Any`, Output : `Data not found`
+
+```java
+public class Main {
+
+    static class Person {
+        private String name;
+        private String nik;
+
+        public Person(String name, String nik) {
+            this.name = name;
+            this.nik = nik;
+        }
+        
+        // Getter and Setter method
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input : ");
+        String searchKey = input.nextLine();
+
+        Person calvin = new Person("Calvin", "001");
+        Person joe = new Person("Joe", "002");
+        Person maverick = new Person("Maverick", "003");
+        Person kirito = new Person("Kirito", "004");
+        Person andrew = new Person("Andrew", "005");
+
+        Person[] people = {calvin, joe, maverick, kirito, andrew};
+        String result = "Data not found!";
+
+        for (int i = 0; i < people.length; i++) {
+            Person person = people[i];
+            if (searchKey.equalsIgnoreCase(person.getName()) ||
+                    searchKey.equalsIgnoreCase(person.getNik())) {
+                result = "Found data [" + person.getName() + " " + person.getNik() + "]";
+            }
+        }
+
+        System.out.println(result);
+    }
+}
+```
+
+## 07 - Iterrable and Collection
+### Task
+
+Make a summary for `Iterable` and `Collection` material and provide examples of implementation other than those contained in the material.
+
+Implementation includes :
+- While loop
+- Foreach loop
+- Implementation methods of `Iterable` and `Collection`
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Collection<Mentee> mentees = List.of(
+                new Mentee("Calvin", "Male"),
+                new Mentee("Maverick", "Male"),
+                new Mentee("Cassandra", "Female")
+        );
+
+        System.out.println("Use iterator");
+        Iterator<Mentee> iter = mentees.iterator();
+        while (iter.hasNext()) {
+            Mentee mentee = iter.next();
+            System.out.println("Name : " + mentee.getName() + ", Gender : " + mentee.getGender());
+        }
+
+        System.out.println();
+        System.out.println("Use foreach");
+        for (Mentee mentee : mentees) {
+            System.out.println("Name : " + mentee.getName() + ", Gender : " + mentee.getGender());
+        }
+
+    }
+
+    public static class Mentee {
+        private String name;
+        private String gender;
+
+        public Mentee(String name, String gender) {
+            this.name = name;
+            this.gender = gender;
+        }
+
+        // Getter and Setter method
+    }
+
+}
+```
+
+## 08 - Collection List

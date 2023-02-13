@@ -264,7 +264,7 @@ public static void main(String[] args) {
 ---
 <style scoped>
     p, pre {
-        font-size: 0.8rem
+        font-size: 0.75rem
     }
 </style>
 ### Task
@@ -278,13 +278,13 @@ Input Boba menu : Boba Tea
 Input Size : REGULAR
 Input payment : 120000
 
-Your amount is less than price!
+Exception in thread "main" InvalidAmountException: Your amount is less than price!
 ```
 
 ```text
-Input Boba menu : EXTRA_SMALL
+Input Boba menu : Boba Tea
 Input Size: EXTRA_LARGE
 
-Invalid boba size!
-Available size : [SMALL, REGULAR, LARGE]
+Exception in thread "main" InvalidBobaSizeException: Invalid boba size!
+Available boba size: [REGULAR, LARGE]
 ```
