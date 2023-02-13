@@ -4,8 +4,8 @@ Java Answer Key of **Rawlabs Academy**
 ## Table of Contents
 - [01 - Introduction Algorithm](#01---introduction-algorithm)
 - [02 - Basic Programming](#02---basic-programming)
-- [03 - Object Oriented Programming (OOP) - Basic](#03---object-oriented-programming--oop----basic)
-- [04 - Abstract, Inheritence Polymorphism (OOP)](#04---abstract--inheritence-polymorphism--oop-)
+- [03 - Basic Object Oriented Programming](#03---basic-object-oriented-programming)
+-  [04 - Abstract Inheritence Polymorphism](#04---abstract-inheritence-polymorphism)
 - [05 - Enumeration](#05---enumeration)
 - [06 - Array](#06---array)
 - [07 - Iterrable and Collection](#07---iterrable-and-collection)
@@ -116,7 +116,7 @@ public class Palindrome {
 }
 ```
 
-## 03 - Object Oriented Programming (OOP) - Basic
+## 03 - Basic Object Oriented Programming
 ### **Task**
 Define 5 classes freely related to the type of animal, plant or vehicle. Use encapsulation concepts such as public, protected and private according to analogy examples in the real world.
 
@@ -269,7 +269,7 @@ public class Main {
 }
 ```
 
-## 04 - Abstract, Inheritence Polymorphism (OOP)
+## 04 - Abstract Inheritence Polymorphism
 ### Task
 Create a simple calculator application with addition, subtraction, division and multiplication functions. 
 
