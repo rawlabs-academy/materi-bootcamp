@@ -10,6 +10,11 @@ Java Answer Key of **Rawlabs Academy**
 - [06 - Array](#06---array)
 - [07 - Iterrable and Collection](#07---iterrable-and-collection)
 - [08 - Collection List](#08---collection-list)
+- [09 - Collection Set](#09---collection-set)
+- [10 - Collection Map](#10---collection-map)
+- [11 - Java Generic Method and Generic Class](#11---java-generic-method-and-generic-class)
+- [12 - String Buffer and String Builder](#12---string-buffer-and-string-builder)
+- [13 - Lambda Expression](#13---lambda-expression)
 
 
 ## 01 - Introduction Algorithm
