@@ -903,7 +903,71 @@ public class Main {
 ```
 
 ## 08 - Collection List
+### Task - **Array Merge**
+Make a program to combine 2 arrays, then insert several objects into the array in the middle with the index entered.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        List<String> data1 = List.of("One", "Two", "Three");
+        List<String> data2 = List.of("Four", "Five");
+
+        List<String> result = new ArrayList<>(data1);
+        result.addAll(data2);
+        System.out.println(result);
+    }
+
+}
+```
+ 
+### Task - **Play with Parking Area**
+It is known that there is a parking lot that only contains 1 motorcycle in each row. Make a program to manage the parking lot so that it fills the farthest parking lot with the parking gate first and the motorbike closest to the parking gate can exit first.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Stack<String> motor = new Stack<>();
+        Scanner sc = new Scanner(System.in);
+        String type;
+        do {
+            System.out.print("Input Type\n1. Motor Masuk\n 2. Motor Keluar\n99. Exit\nMasukkan Pilihan : ");
+            type = sc.nextLine();
+
+            if ("1".equalsIgnoreCase(type)) {
+                System.out.print("Input plat nomor : ");
+                String plat = sc.nextLine();
+                motor.push(plat);
+            } else if ("2".equalsIgnoreCase(type)) {
+                System.out.println("Motor keluar : " + motor.peek());
+                motor.pop();
+            }
+
+            System.out.println("Data motor : " + motor);
+        } while (!"99".equalsIgnoreCase(type));
+    }
+
+}
+```
+
 ## 09 - Collection Set
+### Task - **Array Merge**
+
+Create a program to merge 2 arrays that given and don't have the same name in the data that was merged. And then print out the **descendance data also**.
+
+**Note :** Do not use Brute Force
+
+Sample Test Case :
+- input : `['kazuya', 'jin', 'lee']` and `['kazuya', 'feng']`
+    output : `['kazuya', 'jin', 'lee', 'feng']`
+- input: `['jin', 'lee', 'leo']` and `['kazuya', 'panda', 'leo']`
+    output : `['jin', 'lee', 'leo', 'kazuya', 'panda']`
+
+```java
+
+```
+
 ## 10 - Collection Map
 ## 11 - Java Generic Method and Generic Class
 ## 12 - String Buffer and String Builder
