@@ -567,3 +567,20 @@ public class StringBuilderTrim {
 | It means two thread can't call the methods of StringBuffer simultancously| It means two thread can call the methods of StringBuilder simultancously|
 | 1.0| 1.5|
 | It is less efficient| It is more efficient|
+
+---
+## Task
+
+Create method to print log like following below using string builder.
+
+```log
+================= RAWLABS ID ====================
+> Learning Java is Fun
+> We will learn spring boot soon
+> Today is 2023-02-13T10:30:00.000
+> My name is Calvin, I have learn String Builder in Java
+> My Hobbies is Coding and Learning
+=================================================
+```
+
+Also, make a summary of what is learned in the `StringBuilder` on your `git`.
