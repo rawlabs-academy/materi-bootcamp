@@ -970,10 +970,391 @@ Sample Test Case :
     output : `['jin', 'lee', 'leo', 'kazuya', 'panda']`
 
 ```java
+public class Main {
 
+    public static void main(String[] args) {
+        List<String> data1 = List.of("kazuya", "jin", "lee");
+        List<String> data2 = List.of("kazuya", "feng");
+
+        Set<String> result = new HashSet<>(data1);
+        result.addAll(data2);
+
+        System.out.println(result);
+    }
+
+}
 ```
 
 ## 10 - Collection Map
+### Task 1 - **Array Appears Once**
+
+Create a method that functions to identify numbers that appear once from a string that is input. String contains a collection of numbers.
+
+**Test Case :**
+- Input : `"76523752"`
+  Output : `[6, 3]`
+- Input : `"1122"`
+  Output: `[]`
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String number = "";
+
+        System.out.print("Input number : ");
+        number = sc.nextLine();
+
+        Map<Integer, Integer> map = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+
+        String[] arr = number.split("");
+
+        for (String v : arr) {
+            Integer num = Integer.valueOf(v);
+            if (map.get(num) == null) {
+                map.put(num, 1);
+            } else {
+                map.put(num, map.get(num) + 1);
+            }
+        }
+
+        System.out.println(map);
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == 1) {
+                result.add(entry.getKey());
+            }
+        }
+
+        System.out.println(result);
+    }
+
+}
+```
+
+### Task 2 - **Array Unique**
+
+Create a method to identify the unique value between 2 array.
+
+**Test Case :**
+- Input : `[1, 2, 3, 4]` and `[1, 3, 5, 10, 16]`
+  Output : `[2, 4, 5, 10, 16]`
+- Input : `[3, 8]` and `[2, 8]`
+  Output : `[3, 2]`
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        List<Integer> data1 = List.of(1, 2, 3, 4);
+        List<Integer> data2 = List.of(1, 3, 5, 10, 16);
+
+        List<Integer> merge = new ArrayList<>(data1);
+        merge.addAll(data2);
+
+        Map<Integer, Integer> m = new HashMap<>();
+
+         for (Integer v : merge) {
+             m.merge(v, 1, Integer::sum);
+         }
+
+         List<Integer> unique = new ArrayList<>();
+         for (Map.Entry<Integer, Integer> entry : m.entrySet()) {
+             if (entry.getValue() == 1) {
+                 unique.add(entry.getKey());
+             }
+         }
+
+        System.out.println(unique);
+    }
+
+}
+```
+
+### Task 3 - **Search Book**
+
+Create class `BookPriceList` and have fields are `name`,  `price` and `discount`. Add some **object** and **value** of that class.
+
+Create method to check discount and calculate the final price of the book you are looking for.
+
+```text
+Input book which you want to check : java
+Book name : Java from Zero to Hero
+Discount : 15%
+Price : IDR xxx,-
+```
+
+**Note :** `Price` is represent the **final price** after discount.
+
+File `Book.java`
+```java
+public class Book {
+
+    private String name;
+    private Integer price;
+    private Integer disc;
+
+    public Book(String name, Integer price, Integer disc) {
+        this.name = name;
+        this.price = price;
+        this.disc = disc;
+    }
+
+    // Getter and Setter method
+}
+```
+
+File `Main.java`
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Book java = new Book("Java", 30000, 10);
+        Book pyhton = new Book("Python", 24000, 20);
+        Book javascript = new Book("Javascript", 70000, 15);
+        Book kotlin = new Book("Kotlin", 120000, 25);
+
+        Map<String, Book> map = new HashMap<>();
+        map.put(java.getName().toLowerCase(), java);
+        map.put(pyhton.getName().toLowerCase(), pyhton);
+        map.put(javascript.getName().toLowerCase(), javascript);
+        map.put(kotlin.getName().toLowerCase(), kotlin);
+
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Input book which you want to check : ");
+            String search = sc.nextLine().toLowerCase();
+
+            Book book = map.get(search);
+            System.out.println("Book name : " + book.getName());
+            System.out.println("Price : " + book.getPrice());
+            System.out.println("Discount : " + book.getDisc());
+
+            Double disc = Double.valueOf((100-book.getDisc()) * 0.01);
+
+            Double price = disc * book.getPrice();
+            System.out.println("Final Price: IDR " + price);
+        } catch (Exception e) {
+            System.out.println("Book not found!");
+        }
+    }
+
+}
+```
+
 ## 11 - Java Generic Method and Generic Class
+### Task - **Array Unique**
+Create a method to identify the unique value between 2 array of different type using single **generic method**.
+
+**Test Case :**
+- Input : `[1, 2, 3, 4]` and `[1, 3, 5, 10, 16]`
+  Output : `[2, 4, 5, 10, 16]`
+- Input : `["one", "two"]` and `["two", "six"]`
+  Output : `["one", "six"]`
+
+```java
+public class Main {
+
+    public static <E> List<E> arrayUnique(List<E> list1, List<E> list2) {
+        List<E> data = new ArrayList<>(list1);
+        data.addAll(list2);
+
+        Map<E, Integer> m = new HashMap<>();
+        for (E v : data) {
+            m.merge(v, 1, Integer::sum);
+        }
+
+        List<E> unique = new ArrayList<>();
+        for (Map.Entry<E, Integer> entry : m.entrySet()) {
+            if (entry.getValue() == 1) {
+                unique.add(entry.getKey());
+            }
+        }
+        return unique;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> integers = arrayUnique(List.of(1, 2, 3, 4), List.of(1, 3, 5, 10, 16));
+        System.out.println(integers);
+
+        List<String> strings = arrayUnique(List.of("one", "two"), List.of("two", "six"));
+        System.out.println(strings);
+    }
+}
+```
+
+### Task - **Generic Class**
+Create class using **generic class**. The class must have attributes `responseCode`, `responseDesc`, `timestamp` and `data`. The `data` is generic type that can be used for `String`, `Integer`, `Object`, `List`, etc.
+
+```text
+responseCode: SUCCESS
+responseDesc: Success
+timestamp: 2023-02-13T21:48:27.870496
+data: Hello World
+```
+
+```text
+responseCode: SUCCESS
+responseDesc: Success
+timestamp: 2023-02-13T21:50:05.087440
+data: [Calvin, Joe, Cassandra]
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        BaseResponse<String> response1 = new BaseResponse<>("SUCCESS", "Success", LocalDateTime.now(), "Hello World");
+        System.out.println("responseCode: " + response1.getResponseCode());
+        System.out.println("responseDesc: " + response1.getResponseDesc());
+        System.out.println("timestamp: " + response1.getTimestamp());
+        System.out.println("data: " + response1.getData());
+
+        System.out.println();
+        BaseResponse<List<String>> response2 = new BaseResponse<>("SUCCESS", "Success", LocalDateTime.now(), List.of("Calvin", "Joe", "Cassandra"));
+        System.out.println("responseCode: " + response2.getResponseCode());
+        System.out.println("responseDesc: " + response2.getResponseDesc());
+        System.out.println("timestamp: " + response2.getTimestamp());
+        System.out.println("data: " + response2.getData());
+    }
+
+}
+```
+
 ## 12 - String Buffer and String Builder
+### Task
+
+Create method to print log like following below using string builder. **Note :** `Calvin` is inputed name, `2023-02-13T10:30:00.000` is represent today.
+
+```text
+================= RAWLABS ID ====================
+> Learning Java is Fun
+> We will learn spring boot soon
+> Today is 2023-02-13T10:30:00.000
+> My name is Calvin, I have learn String Builder in Java
+> My Hobbies is Coding and Learning
+=================================================
+```
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Input your name: ");
+        String name = sc.nextLine();
+        sc.close();
+
+        LocalDateTime today = LocalDateTime.now();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("================= RAWLABS ID ====================\n");
+        sb.append("> Learning Java is Fun\n");
+        sb.append("> We will learn spring boot soon\n");
+        sb.append("> Today is ");
+        sb.append(today);
+        sb.append("\n");
+        sb.append("> My name is ");
+        sb.append(name);
+        sb.append(", ");
+        sb.append("I have learn String Builder in Java\n");
+        sb.append("> My Hobbies is Coding and Learning\n");
+        sb.append("=================================================\n");
+
+        System.out.println(sb);
+    }
+}
+```
+
 ## 13 - Lambda Expression
+### Task - **Play with Data**
+It is known with the following data :
+
+| Name | Interest | GPA | Status |
+|:-----|:--------:|:---:|:------:|
+| Calvin | Mobile | 3.5 | **PASSED** |
+| Joe | Backend | 4.0 | **PASSED** |
+| Albert | Web | 3.8 | **PASSED** |
+| Maverick | Backend | 2.9 | **NOT_PASSED** |
+| Andra | Backend | 2.5 | **PASSED** |
+| Cassandra | Mobile | 3.0 | **PASSED** |
+
+
+- Get list of cumlaude students, GPA should be greater than equal to **3.5** GPA
+- Group student by status
+- Count interest, how many took the `Mobile`, `Backend` or `Web` interest.
+- Order students by name **ascending** order
+- Order students by GPA **descending** order
+
+File `Student.java`
+```java
+public class Student {
+    private String name;
+    private String interest;
+    private Double gpa;
+    private String status;
+
+    public Student(String name, String interest, Double gpa, String status) {
+        this.name = name;
+        this.interest = interest;
+        this.gpa = gpa;
+        this.status = status;
+    }
+
+    // Getter and Setter method
+}
+```
+
+File `Main.java`
+```java
+public class Main {
+    public static void main(String[] args) {
+        List<Student> students = List.of(
+                new Student("Calvin", "Mobile", 3.5, "PASSED"),
+                new Student("Joe", "Backend", 4.0, "PASSED"),
+                new Student("Albert", "Web", 3.8, "PASSED"),
+                new Student("Maverick", "Backend", 2.9, "NOT_PASSED"),
+                new Student("Andra", "Backend", 2.5, "NOT_PASSED"),
+                new Student("Cassandra", "Mobile", 3.0, "PASSED")
+        );
+
+        // Get list cumlaude
+        List<Student> cumlaudeStudents = students
+                .stream()
+                .filter(v -> v.getGpa() >= 3.5)
+                .collect(Collectors.toList());
+        System.out.println(cumlaudeStudents);
+
+        // Group by status
+        Map<String, List<Student>> groupByStatus = students
+                .stream()
+                .collect(Collectors.groupingBy(v -> v.getStatus().toLowerCase()));
+        System.out.println(groupByStatus);
+
+        // Count by Interest
+        Map<String, Long> countInterest = students
+                .stream()
+                .collect(Collectors.groupingBy(v -> v.getInterest().toLowerCase(), Collectors.counting()));
+        System.out.println(countInterest);
+
+        // Bonus Order by Name Ascending
+        List<Student> orderByNameAscending = students
+                .stream()
+                .sorted(Comparator.comparing(Student::getName))
+                .collect(Collectors.toList());
+        orderByNameAscending.forEach(v -> System.out.println(v.getName()));
+
+        System.out.println();
+
+        // Order by GPA
+        List<Student> orderByGPADescending = students
+                .stream()
+                .sorted(Comparator.comparing(Student::getGpa).reversed())
+                .collect(Collectors.toList());
+        orderByGPADescending.forEach(v -> System.out.println(v.getName() + " :: " + v.getGpa()));
+
+    }
+}
+```

@@ -173,26 +173,22 @@ Create a method to identify the unique value between 2 array of different type u
 ---
 <style scoped>
     pre, p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 </style>
 ### Task - **Generic Class**
-Create class like the output json below using **generic class**. The `data` is generic type that can be used for `String`, `Integer`, `Object`, `List`, etc.
+Create class using **generic class**. The class must have attributes `responseCode`, `responseDesc`, `timestamp` and `data`. The `data` is generic type that can be used for `String`, `Integer`, `Object`, `List`, etc.
 
-```json
-{
-    "responseCode": "SUCCESS",
-    "responseDesc": "Success",
-    "timestamp: ": "2023-02-10T18:19:26.492",
-    "data": {}
-}
+```text
+responseCode: SUCCESS
+responseDesc: Success
+timestamp: 2023-02-13T21:48:27.870496
+data: Hello World
 ```
 
-```json
-{
-    "responseCode": "SUCCESS",
-    "responseDesc": "Success",
-    "timestamp: ": "2023-02-10T18:19:26.492",
-    "data": []
-}
+```text
+responseCode: SUCCESS
+responseDesc: Success
+timestamp: 2023-02-13T21:50:05.087440
+data: [Calvin, Joe, Cassandra]
 ```
