@@ -65,9 +65,9 @@ So, it assign it into the **reference variable**.
 
 ---
 ## **Methods**
-- `charAt()`, `contains()`, `equals()`, `equalsIgnoreCase()`, `topperCase()`, `toLowerCase()`
-- `length()`, `compare To()`, `join()`, `isEmpty()`, `replaceAll()`, `replaceFirst()`
-- `trim()`, `index()`, `lastIndexOf()`, `toString()`,`concat()`, `replace()`, `equals()`
+- `charAt()`, `contains()`, `equals()`, `equalsIgnoreCase()`, `toUpperCase()`, `toLowerCase()`
+- `length()`, `compareTo()`, `join()`, `isEmpty()`, `replaceAll()`, `replaceFirst()`
+- `trim()`, `index()`, `lastIndexOf()`, `toString()`,`concat()`, `replace()`
 - `hashCode()`, `compareTolgnoreCase()`
 - `split()`
 - `substing()`
@@ -76,7 +76,7 @@ So, it assign it into the **reference variable**.
 
 ### Example 3 - **subString()**
 
-- `substring(int index)` the parameter is start / begin index
+- `subString(int index)` the parameter is start / begin index
 - `subString(int start, int end)`
 
 ```java
@@ -96,7 +96,7 @@ public class Main {
 The String `equals()` method overrides the equals() method of Object class 
 
 ```java
-public class StringDemo1 {
+public class Main {
     public static void main(String[] args) {
         String s = "Python";
         String s1 = "python";
@@ -113,7 +113,7 @@ public class StringDemo1 {
 ### Example 5 - **equalsIgnoreCase()**
 
 ```java
-public class StringDemo1 {
+public class Main {
 
     public static void main(String[] args) {
         String s = "PYTHON";
@@ -130,7 +130,7 @@ public class StringDemo1 {
 ### Example 6 - **trim()**
 
 ```java
-public class StringDemo2 {
+public class Main {
 
     public static void main(String[] args) {
         String s = "Java Python";
@@ -146,6 +146,7 @@ public class StringDemo2 {
 ### Example 7 - **replace()**
 
 ```java
+public class Main {
     public static void main(String[] args) {
         String s1 = "Java is a very good language";
         String replaceString = s1.replace('v','w')
@@ -154,13 +155,14 @@ public class StringDemo2 {
         System.out.println(s.trim());
       
     }
+}
 ```
 
 ---
 ### Example 8 - **split()**
 
 ```java
-   public class Main {
+public class Main {
     public static void main(String[] args) {
         String str = "Learn java is fun, i will split here by comma, thank you!";
         String[] strings = str.split(", ");
@@ -191,14 +193,14 @@ public class Main {
 It returns a `String` that represents the concatenation of this object's charachters followed by the string argument's characters.
 
 ```java
-public class StringDemo8 {
+public class Main {
 
     public static void main(String[] args) {
         String s = "Java";
         s.concat("Programming");
         System.out.println(s);
-      
     }
+    
 }
 ```
 
@@ -206,15 +208,16 @@ public class StringDemo8 {
 ### Example 11 - **contains()**
 
 ```java
-import java.util.Scanner; 
-public class StringContains{
-
+public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String s = new String();
+
         System.out.println("Enter a sentences");
         s = scan.nextLine();
+
         System.out.println("Find a setences");
+        
         String find = scan.nextLine();
         System.out.println(s.contains(find));
     }
@@ -222,21 +225,33 @@ public class StringContains{
 ```
 
 ---
+<style scoped>
+    pre {
+        font-size: 0.65rem;
+    }
+</style>
 ### Example 12 - **toString()**
 
 ```java
-public class StringCompareTo{
+public class StringCompareTo {
+
     private int regno;
     private String name;
     public StringCompareTo() {
         super();
-    } public StringCompareTo(int regno, String name) {
+    }
+    
+    public StringCompareTo(int regno, String name) {
         super();
         this.regno = regno;
         this.name = name;
-    } public String toString()
-    { return "Name" + name + "Regno" + regno+ "\n";
-    } public static void main(String[] args) {
+    }
+    
+    public String toString() { 
+        return "Name" + name + "Regno" + regno+ "\n";
+    } 
+    
+    public static void main(String[] args) {
         StringCompareTo sc = new StringCompareTo(123, "Dhivya");
         StringCompareTo sc1 = new StringCompareToO(123, "Dhiya");
         System.out.println(sc + " " + sc1);
@@ -245,44 +260,47 @@ public class StringCompareTo{
 ```
 
 ---
-### Example 13 - **toUpperCase()toLoweCase(),chatAt()**
+#### Example 13 - **toUpperCase(), toLoweCase(), chatAt()**
 
 ```java
-public class CharttUppLow{
-
+public class Main {
     public static void main(Sting[] args){
         String s = new Sting("JAVA");
         String c = "python";
+
         System.out.println(s.charAt(2));
         System.out.println("To lower case" + s.toLowerCase());
         System.out.println("To upper case " + c.toUpperCase());
     }
-  
 }
 ```
 
 ---
-### Example 14 - **length(), join(), is Empty()**
+### Example 14 - **length(), join(), isEmpty()**
 
 ```java
+public class Main {
     public static void main(Sting[] args){
         StringJoinLengthIsEmpty n = new StringJoinLengthIsEmpty():
         String s a new String();
+
         System.out.printIn("Given String" + s.isEmpty());
+        
         s = "Java Programming";
         s = s.join(".", "welcome", "to", "java");
+        
         System.out.println("Join a words : " + s);
         System.out.println("The length is " + s.length()); 
         System.out.println("Given String " + s.isEmpty());
-        }
-  
+    }
+} 
 ```
 
 ---
 ### Example 15 - **replaceAll(), replaceFirst()**
 
 ```java
-public class StringReplaceAll { 
+public class Main { 
 
     public static void main(String[] args) {
         String s = "Java Programming is super ";
@@ -298,26 +316,27 @@ public class StringReplaceAll {
 ### Example 16 - **index()**
 
 ```java
-public static void main(Sting[] args){
-    String s = new String("Java is a Object oriented programming");
-    System.out.println(s.indexOf("is"));
-    System.out.println(s.indexOf('j', 4));
-    System.out.println(s.indexOf('j', 16));
-    System.out.println(s.indexOf("Object"));
-    System.out.println(s.indexOf("Object", 8));
-    System.out.println(s.indexOf("Object", 18));
+public class Main {
+    public static void main(Sting[] args){
+        String s = new String("Java is a Object oriented programming");
+        System.out.println(s.indexOf("is"));
+        System.out.println(s.indexOf('j', 4));
+        System.out.println(s.indexOf('j', 16));
+        System.out.println(s.indexOf("Object"));
+        System.out.println(s.indexOf("Object", 8));
+        System.out.println(s.indexOf("Object", 18));
     }
-  
+} 
 ```
 
 ---
 ### Example 17 - **lastIndexOf()**
 
 ```java
-public class StringLastIndexOf { 
+public class Main { 
 
     public static void main(String[] args) {
-        String s = "Java Programming is awesome, woderful ";
+        String s = "Java Programming is awesome, wonderful";
         System.out.println(s.lastIndexOf("o"));
         System.out.println(s.lastIndexOf("is"));
         System.out.println(s.lastIndexOf("o", 28));
@@ -334,19 +353,16 @@ public class StringLastIndexOf {
 ```java
 public class StringCompareTo { 
     public static void main(String[] args) {
-        String[]s = {"guru","divya","anju","ice","Divya"};
-        int i;
-        for(i=0;i<s.length;i++)
-        {
-            for(int j=i+1;j<s.length;j++)
-            {
-                if(s[i].compareTo(s[j])>0)
-                {
+        String[] s = {"guru","divya","anju","ice","Divya"};
+        for (int i = 0; i < s.length; i++) {
+            for (int j = i + 1; j < s.length; j++) {
+                if (s[i].compareTo(s[j]) > 0) {
                     String temp=s[i];
                     s[i] = s[j];
                     s[j] = temp;
                 }
-            } System.out.println(s[i]);
+            }
+            System.out.println(s[i]);
         }
     }  
 }
@@ -360,18 +376,15 @@ package exercise30Aug19;
 public class StringCompareTo { 
     public static void main(String[] args) {
         String[]s = {"guru","divya","anju","ice","Divya"};
-        int i;
-        for(i=0;i<s.length;i++)
-        {
-            for(int j=i+1;j<s.length;j++)
-            {
-                if(s[i].compareToIgnoreCase(s[j])>0)
-                {
+        for (int i = 0; i < s.length; i++) {
+            for (int j = i + 1; j < s.length; j++) {
+                if (s[i].compareToIgnoreCase(s[j]) > 0) {
                     String temp=s[i];
                     s[i] = s[j];
                     s[j] = temp;
                 }
-            } System.out.println(s[i]);
+            }
+            System.out.println(s[i]);
         }
     }
 }  
@@ -379,26 +392,25 @@ public class StringCompareTo {
 
 ---
 ## What is **String Buffer**?
-- StringBuffer is mutable `String`
-- JavaStringBuffer calss is (synchronized)thread-safe i.e multiple threads cannot acces it simultaneously
+- StringBuffer is **mutable** `String`
+- JavaStringBuffer calss is **synchronized** thread-safe i.e multiple threads cannot acces it simultaneously
 - So it is safe and will result in an order.
 
 ---
 ### Why String Buffer is mutable?
 
 ```java
-public class StringDemo4 {
-
+public class Main {
     public static void main(String[] args) {
-    StringBuffer sb = new StringBuffer("Ajith");
-    sb.append("Kumar");
-    System.out.println(sb);
+        StringBuffer sb = new StringBuffer("Ajith");
+        sb.append("Kumar");
+        System.out.println(sb);
     }
 }
 ```
 ---
 ## **Methods**
-- `apend()`, `replace()`, `setCharAt()`
+- `append()`, `replace()`, `setCharAt()`
 - `insert()`
 - `delete()`
 - `reverse()`
@@ -414,6 +426,7 @@ public class StringDemo4 {
 public class StringBufferDelete {
     public static void main(String[] args){
         StringBuffer sb = new StringBuffer("Java Programming is awesome");
+
         System.out.println(sb.delete(5,10));
         StringBuffer sb1 = ner StringBuffer("Python is super");
         System.out.println(sb1.deleteCharAt(10));
@@ -428,6 +441,7 @@ public class StringBufferDelete {
 public class StringBufferReplace {
     public static void main(String[] args){
         StringBuffer sb = new StringBuffer("Java Programming is awesome");
+        
         System.out.println(sb.replace(5, 15, "Python"));
         System.out.println(sb.reverse());
     }
@@ -441,9 +455,9 @@ public class StringBufferReplace {
 public class StringBufferTrim {
 
     public static void main(String[] args) {
-    StringBuffer sb = new StringBuffer ("Java Programming is awesome");
-    sb.setLength(8);
-    System.out.printin(sb);
+        StringBuffer sb = new StringBuffer ("Java Programming is awesome");
+        sb.setLength(8);
+        System.out.printin(sb);
     }
 }
 ```
@@ -455,10 +469,11 @@ public class StringBufferTrim {
 public class StringBufferChar {
 
     public static void main(String[] args) {
-    StringBuffer sb = new StringBuffer ("Java Programming is awesome");
-    System.out.printin(sb.charAt(5));
-    sb.setcharAt(10, 'p'); 
-    System.out.printin(sb);
+        StringBuffer sb = new StringBuffer ("Java Programming is awesome");
+    
+        System.out.printin(sb.charAt(5));
+        sb.setcharAt(10, 'p'); 
+        System.out.printin(sb);
     }
 }
 ```
@@ -470,21 +485,22 @@ public class StringBufferChar {
 public class StringBufferInsert {
 
     public static void main(String[] args) {
-    StringBuffer sb = new StringBuffer ("Java Programming is awesome");
-    sb.insert(17, "nice"); 
-    System.out.printin(sb);
+        StringBuffer sb = new StringBuffer ("Java Programming is awesome");
+    
+        sb.insert(17, "nice"); 
+        System.out.printin(sb);
     }
 }
 ```
 ---
 ## What is **String Builder**?
-- StringBuffer is mutable `String`
-- The Java StringBuilder class is same as StringBuffer class except that it is non-synchronized (not thread-safe).
-- It si available since ]DK 1.5.
+- StringBuffer is **mutable** `String`
+- The Java StringBuilder class is same as StringBuffer class except that it is **non-synchronized** (not thread-safe).
+- It is available since ]DK 1.5.
 
 ---
 ## **Methods**
-- `append0()`, `replace()`, `subsequence()`, `substring()`, `charAt()` , `trimToSize()` 
+- `append()`, `replace()`, `subsequence()`, `substring()`, `charAt()` , `trimToSize()` 
 - `insert()`, `delete()`, `capacity()`, `ensureCapacity()`, `reverse()`, `length()`
 - StringBuffer methods is similar to StringBuilder
 
@@ -517,22 +533,31 @@ public class StringBuilderSubSeq {
 ```
 
 ---
+<style scoped>
+    pre {
+        font-size: 0.75rem;
+    }
+</style>
 ### Example 3 - **trimToSize**
 
 ```java
 public class StringBuilderTrim {
     public static void main(String[] args) {
         StringBuilder bs = new StringBuilder ("programming"); 
-        System.out.println("String = "+sb);
-        int length = sb.lengtho);
+        System.out.println("String = " + sb);
+        
+        int length = sb.lengtho;
         int capacity = sb.capacity() ; 
-        System.out.println("Length = "+length); 
-        System.out.printin("Capacity = "+capacity);
+        
+        System.out.println("Length = " + length); 
+        System.out.printin("Capacity = " + capacity);
+        
         sb.trimTosize();
         length = sb.length();
         capacity = sb.capacity();
-        System.out.println("Length after trimtosize = "+length);
-        System.out.println("Capacity after trimtosize = "capacity);
+        
+        System.out.println("Length after trimtosize = " + length);
+        System.out.println("Capacity after trimtosize = " + capacity);
     }
 }
 ```
@@ -549,8 +574,7 @@ public class StringBuilderTrim {
 | It is immutable | It is mutable |
 | String is slow and consumes more memory| String is fast and consumes less memory |
 | When you concat too many strings because every time it creates new instance| When you concat strings |
-| 1.0| 1.0|
-| Java.lang.package| Java.lang.package|
+| `java.lang` package| `java.lang` package |
 
 ---
 <style scoped>
@@ -562,11 +586,10 @@ public class StringBuilderTrim {
 
 | StringBuffer | String Builder|
 |:--------|:--------|
-| It is immutable | It is mutable |
-| It is synchronized i.e. thread safe| It is non-synchronized i.e. thread safe |
-| It means two thread can't call the methods of StringBuffer simultancously| It means two thread can call the methods of StringBuilder simultancously|
-| 1.0| 1.5|
-| It is less efficient| It is more efficient|
+| It is mutable | It is mutable |
+| It is synchronized | It is non-synchronized |
+| It means two thread can't call the methods of StringBuffer simultancously| It means two thread can call the methods of StringBuilder simultancously |
+| It is less efficient | It is more efficient|
 
 ---
 ## Task
