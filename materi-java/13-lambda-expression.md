@@ -213,12 +213,12 @@ public class MyLambda {
 ```java
 public class Main {
     interface Display {
-        void print(String val);
+        String print(String val);
     }
 
     public static void main(String[] args) {
         Display display = MyLambda::doPrint;
-        display.print("Rawlabs.id");
+        System.out.prinln(display.print("Rawlabs.id"));
     }
 }
 ```
@@ -229,12 +229,12 @@ public class Main {
 ```java
 public class Main {
     interface Display {
-        String doJoin(String param1, String param2);
+        String doJoin(String param1, String... param2);
     }
 
     public static void main(String[] args) {
         Display display = String::join;
-        String str = display.doJoin("Rawlabs.id", "Java Bootcamp");
+        String str = display.doJoin(" ", "Java Bootcamp");
         System.out.println(str);
     }
 }
@@ -439,7 +439,7 @@ It is known with the following data :
 | Joe | Backend | 4.0 | **PASSED** |
 | Albert | Web | 3.8 | **PASSED** |
 | Maverick | Backend | 2.9 | **NOT_PASSED** |
-| Andra | Backend | 2.5 | **PASSED** |
+| Andra | Backend | 2.5 | **NOT_PASSED** |
 | Cassandra | Mobile | 3.0 | **PASSED** |
 
 ---
