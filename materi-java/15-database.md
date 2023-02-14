@@ -161,6 +161,11 @@ CREATE TABLE user_role {
 ```
 
 ---
+<style scoped>
+    pre {
+        font-size: 1.5rem;
+    }
+</style>
 ### **Modify** Table
 
 ```sql
