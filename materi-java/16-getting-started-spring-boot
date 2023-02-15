@@ -11,7 +11,7 @@ marp: true
 
 # **Database**
 
-Intro REST API and Getting Started REST With `Springboot`
+Intro REST API and Getting Started with **Spring Boot**
 
 ---
 
@@ -33,11 +33,11 @@ Intro REST API and Getting Started REST With `Springboot`
 
 # Before REST, What is API ? 
 
- ![width:850px](./../images/materi-java/restful-api/API.jpg)
+ ![width:850px](./../images/materi-java/restful-api/API.png)
 
  ---
 
- # What is **REST**? 
+ # What is **REST** ? 
 
  REST stands fo **RE**presentational **S**tate **T**ransfer.
 
@@ -52,7 +52,7 @@ Intro REST API and Getting Started REST With `Springboot`
     }
 </style>
 
- # RESTFUL API `≠` HTPP API
+ ## **RESTFUL API** `≠` **HTPP API**
 
  REST architecture and HTTP 1.1 protocol **are independent of each other** , but the HTTP 1.1 protocol was built to be the ideal protocol to follow the principles and constraints of REST
 
@@ -64,7 +64,7 @@ Intro REST API and Getting Started REST With `Springboot`
     }
 </style>
 
-  # HTTP
+  # **HTTP**
 
   HTTP stands for **H**yper**t**ext **T**ransfer **P**rotocol 
 
@@ -85,35 +85,35 @@ Intro REST API and Getting Started REST With `Springboot`
 
 # HTTP Request Example 
 
-![width:1100px](./../images/materi-java/restful-api/http-example.png)
+![width:1100](./../images/materi-java/restful-api/http-example.png)
 
 ---
 <!-- _class: lead -->
 
 # Request Line
 
-![width:900px](./../images/materi-java/restful-api/request-line.png)
+![width:900](./../images/materi-java/restful-api/request-line.png)
 
 ---
 <!-- _class: lead -->
 
 # HTTP Common Method
 
-![width:1000px](./../images/materi-java/restful-api/common-method.png)
+![width:1000](./../images/materi-java/restful-api/common-method.png)
 
 ---
 <!-- _class: lead -->
 
 # HTTP Other **Standard** Method
 
-![width:850px](./../images/materi-java/restful-api/other-method.png)
+![width:850](./../images/materi-java/restful-api/other-method.png)
 
 ---
 <!-- _class: lead -->
 
 # URL
 
-![width:1100px](./../images/materi-java/restful-api/URL.png)
+![width:1100](./../images/materi-java/restful-api/URL.png)
 
 ---
 <style scoped>
@@ -125,12 +125,12 @@ table {
 </style>
 ## HTTP Headers **(Example)**
 
-| HTTP Header | Description|
+| HTTP Header | Description |
 |:--------|:--------|
-| Host | Authority on URL (must be exist in HTTP 1.1) |
-| Content-Type | Data type of HTTP Body |
-| Authorization | Credential for authentication |
-| Accept | Data type that client want to accept |
+| `Host` | Authority on URL (must be exist in HTTP 1.1) |
+| `Content-Type` | Data type of HTTP Body |
+| `Authorization` | Credential for authentication |
+| `Accept` | Data type that client want to accept |
 
 ---
 <!-- _class: lead -->
@@ -152,7 +152,7 @@ table {
 
 # List Of HTTP Status Codes
 
-![width:1200px](./../images/materi-java/restful-api/list-status-code.png)
+![width:1100px](./../images/materi-java/restful-api/list-status-code.png)
 
 ---
 <!-- _class: lead -->
@@ -176,8 +176,8 @@ table {
 
 # REST Path URL Restriction
 
-/user/1/balance (balance milik user id 1)
-/balance/1 (balance dengen id 1)
+`/user/1/balance` (balance owned by user id 1)
+`/balance/1` (balance with id 1)
 Remember, everything in REST is **resource, RPC -> function method only POST or GET**
 
 | Purpose | Method |Incorrect | Correct |
@@ -198,7 +198,7 @@ Remember, everything in REST is **resource, RPC -> function method only POST or 
     } 
 </style>
 
-# Before Spring Boot....
+# Before Spring Boot
 
 ![bg](./../images/materi-java/restful-api/bg.jpg)
 
@@ -206,15 +206,14 @@ Remember, everything in REST is **resource, RPC -> function method only POST or 
 ---
 <style scoped>
     p, ol{
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 </style>
-
-# Introduce: Build Automation Tools
+## Introduce: **Build Automation** Tools
 Build Automation Tools is application tool that help you manage java application.
 
-In Java, there are **Maven** (`POM.XML`) and **Gradle**
-(`Groovy/Kotlin`).
+In Java, there are **Maven** (`pom.xml`) and **Gradle**
+(`Groovy / Kotlin`).
 What they do?
 1. Automate manage your dependencies
 2. Automate manage your build application to binary
@@ -224,20 +223,19 @@ What they do?
 ---
 <style scoped>
     p, ul{
-        font-size: 28.5px;
+        font-size: 0.8rem;
     }
 </style>
-
-# Common Lifecycle in Maven
+## Common Lifecycle in Maven
 Simple, we can call lifecycle = task
-- validate: check if all information necessary for the build is available
-- compile: compile the source code
-- test-compile: compile the test source code
-- test: run unit tests
-- package: package compiled source code into the distributable format (jar, war, ...)
-- integration-test: process and deploy the package if needed to run integration tests
-- install: install the package to a local repository
-- deploy: copy the package to the remote repository
+- `validate`: check if all information necessary for the build is available
+- `compile`: compile the source code
+- `test-compile`: compile the test source code
+- `test`: run unit tests
+- `package`: package compiled source code into the distributable format (jar, war, ...)
+- `integration-test`: process and deploy the package if needed to run integration tests
+- `install`: install the package to a local repository
+- `deploy`: copy the package to the remote repository
 
 ---
 <style scoped>
@@ -245,12 +243,13 @@ Simple, we can call lifecycle = task
         font-size: 1.25rem;
     }
 </style>
+## Common CLI in Spring Boot
 
-# Common CLI in Spring Boot
+`mvn spring-boot:run` -> to run spring boot
 
-mvn spring-boot:run // to run spring boot
+`mvn clean install` -> to clean and install all related local dependencies
 
-mvn clean install // to clean and install all related local dependencies
+`mvn clean verify` -> to clean and verify all test related local dependencies
 
 ---
 <!-- _class: lead -->
@@ -261,43 +260,40 @@ mvn clean install // to clean and install all related local dependencies
         color: white;
     } 
 </style>
-
 # SPRING BOOT
 
 ![bg](./../images/materi-java/restful-api/bg.jpg)
 
 --- 
-
-<style scoped>
-    p {
-        font-size: 1.25rem;
-    } 
-</style>
-
-# What is Spring Boot ? 
+## What is **Spring Boot** ? 
 Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can **"just run"**.
+
 We take an **opinionated** view of the Spring platform and third-party libraries so you can **get started with minimum fuss**. Most Spring Boot applications need minimal Spring configuration.
 
 --- 
 <style scoped>
     p {
-        font-size: 1.25rem;
-    } 
+        font-size: 1.1rem;
+    }
+    p > strong {
+        color: rgb(0, 147, 228);
+    }
 </style>
 
-# 2 Type Framework :` Opinionated` & `Non Opinionated `
+## Type Framework
 
-Opinionated -> Complete (Web Server, Controller, Data Access)
-Non Opinionated -> Modular (Web Server)
+\
+**Opinionated** -> Complete (Web Server, Controller, Data Access)
+
+**Non Opinionated** -> Modular (Web Server)
 
 --- 
 <style scoped>
     p,ul {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     } 
 </style>
-
-# Why Spring Boot? 
+## Why Spring Boot? 
 
 You can choose Spring Boot because of the features and benefits it offers as given here:
 - It provides a flexible way to configure Java Beans, XML  configurations, and Database Transactions.
@@ -307,16 +303,20 @@ You can choose Spring Boot because of the features and benefits it offers as giv
 - Eases dependency management
 - It includes Embedded Servlet Container
 
---- 
-
-<!-- _class: lead -->
-
-# Spring Boot Architecture
-
-![width:900px](./../images/materi-java/restful-api/architecture.png)
+---
+## Getting Started with **Spring Boot**
+![left h:500](../images/materi-java/restful-api/spring-initializr.png)
 
 --- 
+## Spring Boot **Architecture**
 
+![bg right:50% 100%](./../images/materi-java/restful-api/architecture.png)
+
+**Note :** Get used to making it from the **bottom layer**. 
+
+Create the model or entity that represent the table of database and then create the **data access layer**.
+
+--- 
 # Spring Boot Architecture
 
 The `SpringApplication` class provides a convenient way to **bootstrap** a Spring application that will be started from a `main() `method. In many situations you can just delegate to the static `SpringApplication.run` method:
@@ -330,65 +330,151 @@ public static void main(String[] args) {
 } 
 ```
 
---- 
-
-# Controller (Presentation Layer)
-
-It comprises of all the logic related to User Interface (at this context is **HTTP Request** and **HTTP Response**).
-
-```java
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/product")
-public class ProductController {
-private final ProductService productService;
-
-@GetMapping("/{id}")
-public BaseResponse<ProductOutput> getProduct(@PathVariable final Long id) { 
-    return new Base Response<>(productService.getProduct(id));
-    }
-}
+---
+## Project Structure
+```text
+.
+└── com.rawlabs.demospringboot/
+    ├── controller/         # Presentation layer
+    │   └── ...
+    ├── domain/
+    │   ├── dao/            # Representation of Table
+    │   │   └── ...
+    │   └── dto/            # POJO Class
+    │       └── ...
+    ├── repository/         # Data access layer -> to database
+    │   └── ...
+    ├── service/            # Business logic layer
+    │   └── ...
+    └── DemoSpringbootApplication.java
 ```
 
---- 
-
-# Annotations
-
-@RestController for Controller class
-@RequestMapper for path naming
-@GetMapping for GET method
-@PostMapping for POST method
-@PutMapping for PUT method
-@DeleteMapping for DELETE method
-
---- 
-
+---
 <style scoped>
     pre {
         font-size: 0.75rem;
     }
 </style>
+## **Data Access Object** (DAO)
+```java
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "book")
+public class Book {
 
-# Service / Bussiness Logic Layer
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-Every **business logic** done here.
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "price", nullable = false)
+    private Integer price;
+
+}
+```
+
+--- 
+<style scoped>
+    table {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+</style>
+## Annotations
+
+| Annotation | Description |
+|:-----------|:------------|
+| `@Data` | Lombok setter and getter generator |
+| `@Builder` | Lombok builder class |
+| `@NoArgsConstructor` | Lombok generate no arguments constructor |
+| `@AllArgsConstructor` | Lombok generate all arguments constructor |
+| `@Entity` | Annotate that class being used for entity |
+| `@Table` | Represent the table on database |
+| `@Id` | Represent ID primary key |
+| `@GeneratedValue` | Generate value automatically |
+| `@Column` | Represent column name on database |
+
+---
+## **Data Transfer Object** (DTO)
+```java
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class BookDto {
+
+    private String title;
+
+    private Integer price;
+
+}
+```
+
+--- 
+<style scoped>
+    table {
+        width: 100%;
+    }
+</style>
+## Annotations
+
+| Annotation | Description |
+|:-----------|:------------|
+| `@Data` | Lombok setter and getter generator |
+| `@Builder` | Lombok builder class |
+| `@NoArgsConstructor` | Lombok generate no arguments constructor |
+| `@AllArgsConstructor` | Lombok generate all arguments constructor |
+
+--- 
+## Repository - **Data Access Layer**
+
+```java
+@Repository
+public interface ProductRepository extends JpaRepository<Book, Long> {
+
+}
+```
+
+\
+The **annotations**
+| Annotation | Description |
+|:-----------|:------------|
+| `@Repository` | Annotate that class being used for data access layer |
+
+--- 
+<style scoped>
+    pre {
+        font-size: 0.7rem;
+    }
+</style>
+
+## Service - **Bussiness Logic Layer**
 
 ```java
 @Service
-@RequiredArgsConstructor
-public class ProductServiceImpl implements ProductService { 
-    private final ProductRepository productRepository; 
-    private ModelMapper modelMapper;
+public class BookService { 
+    private final BookRepository bookRepository;
 
     @Autowired
-    public void setModelMapper(ModelMapper modelMapper) {
-    this.modelMapper = modelMapper;
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
-    @Override
-    public ProductOutput getProduct(Long id) {
-    Optional<Product> product = productRepository.findById(id); 
-    return modelMapper.map(product, ProductOutput.class);
+    public Book save(BookDto request) {
+        Book book = Book.builder()
+                .title(request.getTitle())
+                .price(request.getPrice())
+                .build();
+        return bookRepository.save(book);
+    }
+
+    public List<Book> getBooks() {
+        return bookRepository.findAll();
     }
 }
 ```
@@ -401,136 +487,110 @@ public class ProductServiceImpl implements ProductService {
     }
 </style>
 
-# Annotations
+## Annotations
 
-@Service for Service class
-@Autowired for enabling you to inject the object dependency implicitly
+| Annotation | Description |
+|:-----------|:------------|
+| `@Service` | Service class |
+| `@Autowired` | Enabling spring boot to inject the object dependency implicitly |
+
 
 --- 
+<style scoped>
+    p, pre {
+        font-size: 0.75rem;
+    }
+</style>
+## Controller - **Presentation Layer**
 
-# Repository / Data Layer
-
-Every **database access** happens here.
+It comprises of all the logic related to User Interface (at this context is **HTTP Request** and **HTTP Response**).
 
 ```java
-public interface ProductRepository extends CrudRepository<Product, Long> {
+@RestController
+@RequestMapping("/v1/book")
+public class BookController {
+    private final BookService bookService;
+
+    @Autowired
+    public BookController(BookService bookService) { 
+        this.bookService = bookService;
+    }
+
+    @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Book> getBooks() {
+        return bookService.getBooks();
+    }
+    
 }
 ```
 
 --- 
+<style scoped>
+    table {
+        width: 100%;
+    }
+</style>
+## Annotations
 
+| Annotation | Description |
+|:-----------|:------------|
+| `@RestController` | Controller class |
+| `@RequestMapping` | Path naming |
+| `@GetMapping` | `GET` Method |
+| `@PostMapping` | `POST` Method |
+| `@PutMapping` | `PUT` Method |
+| `@DeleteMapping` | `DELETE` Method |
+
+
+--- 
 <style scoped>
     p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 </style>
 
-# JPA and Hibernate
+# **JPA and Hibernate**
 
-Object-Relational Mapping (ORM) is the process of converting Java objects to database tables. In other words, this allows us to interact with a relational database without any SQL. **The Java Persistence API (JPA) is a specification that defines how to persist data in Java applications**. The primary focus of JPA is the ORM layer.
+Object-Relational Mapping **(ORM)** is the process of converting Java objects to database tables. In other words, this allows us to interact with a relational database without any SQL. **The Java Persistence API (JPA) is a specification that defines how to persist data in Java applications**. The primary focus of JPA is the ORM layer.
 
 Hibernate is one of the most popular Java ORM frameworks in use today. Its first release was almost twenty years ago, and still has excellent community support and regular releases. Additionally, **Hibernate is a standard implementation of the JPA specification**, with a few additional features that are specific to Hibernate. Let's take a look at some core features of JPA and Hibernate.
 
 --- 
-
 <style scoped>
     pre {
         font-size: 1.25rem;
     }
 </style>
-
-# JPA Dependecies
+## JPA Dependecies
 
 ```xml
 <dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-data-jpa</artifactId> 
-<version>${spring.version}</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
 
 <dependency>
-<groupId>org.postgresql</groupId>
-<artifactId>postgresql</artifactId>
-<version>42.3.0</version>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
 </dependency>
 ```
---- 
 
+--- 
 <style scoped>
     pre {
         font-size: 2rem;
     }
 </style>
-
-# Spring JPA and Datasource Properties
+## Spring JPA and Datasource Properties
 
 ```bash
 spring.datasource.url=jdbc:postgresql://localhost:5432/demo 
 spring.datasource.username=root 
-
 spring.datasource.password=root
 spring.jpa.hibernate.ddl-auto-update 
 spring.jpa.show-sql=true
 ```
-
---- 
-
-<style scoped>
-    pre {
-        font-size: 1.25rem;
-    }
-</style>
-
-# Swagger -> /swagger-ui.html
-
-```xml
-<dependency>
- <groupId>io.springfox</groupId> 
- <artifactId>springfox-swagger2</artifactId>
- <version>2.9.2</version>
-</dependency>
-
-<dependency>
- <groupId>io.springfox</groupId> 
- <artifactId>springfox-swagger-ui</artifactId>
- <version>2.9.2</version>
-</dependency>
-```
-
---- 
-
-<style scoped>
-    pre {
-        font-size:1.5rem;
-    }
-</style>
-
-# Lombok
-
-```xml
-<dependency>
-    <groupId>org.projectlombok</groupId> 
-    <artifactId>lombok</artifactId> 
-    <version>${lombok.version}</version> 
-    <scope>provided</scope> 
-</dependency>
-```
---- 
-
-<style scoped>
-    pre {
-        font-size:1.5rem;
-    }
-</style>
-
-# Useful Library
-
-```xml
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-collections4</artifactId> 
-    <version>4.1</version> 
-</dependency>
-```
-
  
+ ---
+ <!-- _class: lead -->
+![w:1000](./../images/thank-you.png)
