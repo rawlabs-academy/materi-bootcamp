@@ -136,28 +136,28 @@ ALTER TABLE <TABLE_NAME> RENAME TO <NEW_TABLE_NAME>;
 ### **Create** Table
 
 ```sql
-CREATE TABLE user {
+CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
-}
+)
 ```
 
 ```sql
-CREATE TABLE roles {
+CREATE TABLE roles (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL
-}
+)
 ```
 
 ```sql
-CREATE TABLE user_role {
+CREATE TABLE user_role (
     user_id INT NOT NULL,
     role_id INT NOT NULL,
     PRIMARY KEY (user_id, role_id),
-    FOREIGN KEY (user_id) REFERENCES user (id),
+    FOREIGN KEY (user_id) REFERENCES users (id),
     FOREIGN KEY (role_id) REFERENCES roles (id)
-}
+)
 ```
 
 ---
@@ -169,12 +169,12 @@ CREATE TABLE user_role {
 ### **Modify** Table
 
 ```sql
-ALTER TABLE user ADD email VARCHAR(255);
-ALTER TABLE user ADD phone_number INT;
+ALTER TABLE users ADD email VARCHAR(255);
+ALTER TABLE users ADD phone_number INT;
 ```
 
 ```sql
-ALTER TABLE user ALTER COLUMN phone_number TYPE VARCHAR(255);
+ALTER TABLE users ALTER COLUMN phone_number TYPE VARCHAR(255);
 ```
 
 ---
@@ -189,17 +189,17 @@ Statement Operation :
 
 ---
 ## **INSERT**
-Input data to table `user`.
+Input data to table `users`.
 
 ```sql
-INSERT INTO user (username, password, email, phone_number) VALUES
+INSERT INTO users (username, password, email, phone_number) VALUES
 ('maverick', 'mypassword', 'maverick@mail.local', '2387232');
 ```
 
 Or, with returning data from modified row.
 
 ```sql
-INSERT INTO user (username, password, email, phone_number) VALUES
+INSERT INTO users (username, password, email, phone_number) VALUES
 ('maverick', 'mypassword', 'maverick@mail.local', '2387232')
 RETURNING id;
 ```
@@ -211,10 +211,10 @@ RETURNING id;
     }
 </style>
 ## **SELECT**
-Get all data from `user` table.
+Get all data from `users` table.
 
 ```sql
-SELECT * FROM user;
+SELECT * FROM users;
 ```
 
 | id | username | password | email | phone_number |
@@ -228,9 +228,9 @@ SELECT * FROM user;
     }
 </style>
 ### Cont...
-Displays the **username** and **password** in the **user** table whose **id** is 1.
+Displays the **username** and **password** in the **users** table whose **id** is 1.
 ```sql
-SELECT (username, password) FROM user WHERE id = 1;
+SELECT username, password FROM users WHERE id = 1;
 ```
 
 | username | password |
@@ -247,7 +247,7 @@ SELECT (username, password) FROM user WHERE id = 1;
 Displays the **username** and **password** in the **user** table whose **email** is not empty.
 
 ```sql
-SELECT (username, password) FROM user WHERE email IS NOT NULL;
+SELECT username, password FROM users WHERE email IS NOT NULL;
 ```
 
 | username | password |
@@ -261,10 +261,10 @@ SELECT (username, password) FROM user WHERE email IS NOT NULL;
     }
 </style>
 ## **UPDATE**
-Update data into the **user** table whose **id** is 1.
+Update data into the **users** table whose **id** is 1.
 
 ```sql
-UPDATE user SET email = 'test@email.local', phone_number = '128722'
+UPDATE users SET email = 'test@email.local', phone_number = '128722'
 WHERE id = 1
 RETURNING id, username, email, phone_number;
 ```
@@ -280,10 +280,10 @@ RETURNING id, username, email, phone_number;
     }
 </style>
 ## **DELETE**
-Delete data from the **user** table whoose **id** is 1.
+Delete data from the **users** table whoose **id** is 1.
 
 ```sql
-DELETE FROM user
+DELETE FROM users
 WHERE id = 1
 RETURNING *;
 ```
@@ -302,16 +302,16 @@ RETURNING *;
 
 ---
 ## **LIKE / BETWEEN**
-Show data **username** and **email** from `user` table that **username** contains the letter **M** on first letter.
+Show data **username** and **email** from `users` table that **username** contains the letter **M** on first letter.
 
 ```sql
-SELECT username, password FROM user
+SELECT username, password FROM users
 WHERE username LIKE 'M%';
 ```
-Show data **username** and **email** from `user` table that **id** between 1 and 4.
+Show data **username** and **email** from `users` table that **id** between 1 and 4.
 
 ```sql
-SELECT username, password FROM user
+SELECT username, password FROM users
 WHERE id BETWEEN 1 AND 4;
 ```
 
@@ -322,10 +322,10 @@ WHERE id BETWEEN 1 AND 4;
     }
 </style>
 ## **AND / OR**
-Show data **username** and **email** from `user` table that **username** contains the letter **M** on first letter or **id** between 1 and 4.
+Show data **username** and **email** from `users` table that **username** contains the letter **M** on first letter or **id** between 1 and 4.
 
 ```sql
-SELECT username, password FROM user
+SELECT username, password FROM users
 WHERE username LIKE 'M%' OR
 id BETWEEN 1 AND 4;
 ```
@@ -337,10 +337,10 @@ id BETWEEN 1 AND 4;
     }
 </style>
 ## **ORDER BY**
-Show data **username** and **email** from `user` table that **username** contains the letter **M** on first letter or **id** between 1 and 4 and sort the **id** by descending order.
+Show data **username** and **email** from `users` table that **username** contains the letter **M** on first letter or **id** between 1 and 4 and sort the **id** by descending order.
 
 ```sql
-SELECT username, password FROM user
+SELECT username, password FROM users
 WHERE username LIKE 'M%' OR
 id BETWEEN 1 AND 4 ORDER BY id DESC;
 ```
@@ -352,10 +352,10 @@ id BETWEEN 1 AND 4 ORDER BY id DESC;
     }
 </style>
 ## **LIMIT**
-Show data **username** and **email** from `user` table that **username** contains the letter **M** on first letter or **id** between 1 and 4 and sort the **id** by descending order max 2 data.
+Show data **username** and **email** from `users` table that **username** contains the letter **M** on first letter or **id** between 1 and 4 and sort the **id** by descending order max 2 data.
 
 ```sql
-SELECT username, password FROM user
+SELECT username, password FROM users
 WHERE username LIKE 'M%' OR
 id BETWEEN 1 AND 4 ORDER BY id DESC
 LIMIT 2;
@@ -384,11 +384,11 @@ from two or more tables
 ## AGGREGATE
 Function in which the values of multiple rows are grouped together to form a value.
 
-- MIN : `SELECT MIN(id) AS id FROM user`
-- MAX : `SELECT MIN(id) AS id FROM user`
+- MIN : `SELECT MIN(id) AS id FROM users`
+- MAX : `SELECT MIN(id) AS id FROM users`
 - SUM : `SELECT SUM(favourite_count) FROM tweet WHERE user_id = 1`
 - AVG : `SELECT AVG(favourite_count) FROM tweet WHERE user_id = 1`
-- COUNT : `SELECT COUNT(*) FROM user;`
+- COUNT : `SELECT COUNT(*) FROM users;`
 - HAVING : `SELECT user_id FROM tweet GROUP BY user_id`
 `HAVING SUM(favourite_count) > 2`
 
@@ -424,16 +424,16 @@ Sub query can be used with `INSERT`, `SELECT`, `UPDATE` and `DELETE` statements 
 Show data `user` table whose `user_id` is in the `tweets` table.
 
 ```sql
-SELECT * FROM user WHERE id IN 
+SELECT * FROM users WHERE id IN 
 (
     SELECT user_id FROM tweet GROUP BY id
 );
 ```
 
-Show the data `user` table whose total number of `favorite_count` per user is more than 5 in the tweets table.
+Show the data `users` table whose total number of `favorite_count` per user is more than 5 in the tweets table.
 
 ```sql
-SELECT * FROM USERS WHERE id IN 
+SELECT * FROM users WHERE id IN 
 (
     SELECT user_id FROM tweets GROUP BY user_id HAVING 
     SUM(favourite_count) > 5

@@ -14,13 +14,31 @@ marp: true
 Rawlabs Academy
 
 ---
-![w:1190 center](./../images/materi-java/clean-code/example.png)
+<style scoped>
+    pre {
+        font-size: 1.3rem;
+    }
+</style>
+
+```java
+
+public class UpdateController {
+    int i = 5;
+    String nm = "John Doe";
+    String e = "johndoe@gmail.com";
+    String yyyymmddstr = "1996-01-12";
+
+    public String search(String i) {
+        ...
+    }
+}
+
+```
 
 ---
 <!-- _class: lead -->
 ![bg left:50% 80%](./../images/materi-java/clean-code/question.png)
-
-# **What do you think about the code ?**
+# What do you think **about the code** ?
 
 <style scoped>
    h1 {
@@ -29,14 +47,13 @@ Rawlabs Academy
 </style>
 
 ---
-### What is **Clean Code**
+## What is **Clean Code** ?
 <!-- _class: lead -->
 **Clean Code** is term for code that is 'readable', 'understood' and 'altered' by programmers
 
 ---
 <!-- _class: lead -->
-
-![bg left:40% -50%](./../images/materi-java/clean-code/brandon.jfif)
+![bg left:40%](./../images/materi-java/clean-code/brandon.jpg)
 
  >Working code isn't necessary good code.Your code also need to be easy to read, understand, and modify
 ~ **Brandon Gregory**
@@ -44,7 +61,7 @@ Rawlabs Academy
 ---
 <!-- _class: lead -->
 
-![bg left:40% -50%](./../images/materi-java/clean-code/martin.jpg)
+![bg left:40%](./../images/materi-java/clean-code/martin.jpg)
 
  >Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
 ~ **Martin Flower**
@@ -52,43 +69,81 @@ Rawlabs Academy
 ---
 <!-- _class: lead -->
 
-![bg left:100% 60%](./../images/materi-java/clean-code/clean-code.jpg)
+![bg center: 55%](./../images/materi-java/clean-code/clean-code.jpg)
 
 ---
-### Why **Clean Code?**
+## Why **Clean Code?**
 
-![bg left: 90% 90%](./../images/materi-java/clean-code/why-clean-code.png)
-
----
-### Characteristic **Clean Code?**
-1. Easy to understand 
-2. Easy to spell and search
-3. Be brief but describe the context 
-4. Be consistent
-5. Avoid adding unnecessary context
-6. Comments
-7. Good Function
-8. Use Conventions
-9. Formatting
+![bg center: 90%](./../images/materi-java/clean-code/why-clean-code.png)
 
 ---
-### Example **Style Guide?**
+<!-- _class: lead -->
+# **Clean Code**
+# Characteristic
+
+---
+<style scoped>
+    strong {
+        color: red;
+    }
+    pre {
+        font-size: 1.2rem;
+    }
+</style>
+### Easy to Understand - **DON'T DO THIS**
+
+```java
+double b = 125.0;
+int[] data = {2, 3, 5, 7};
+List<String> locations = List.of("New York", "Sydney", 
+    "Texas", "San Francisco");
+
+locations.forEach((l) -> {
+    doStuff();
+    doSomeOtherStuff();
+    ...
+    // Wait, `l` for what?
+    doAnotherThing(l);
+});
+```
+
+---
+<style scoped>
+    pre {
+        font-size: 1.2rem;
+    }
+</style>
+### Easy to Understand - **DO THIS**
+
+```java
+double balance = 125.0;
+int[] primeNumbers = {2, 3, 5, 7};
+List<String> locations = List.of("New York", "Sydney", 
+    "Texas", "San Francisco");
+
+locations.forEach((location) -> {
+    doStuff();
+    doSomeOtherStuff();
+    ...
+    doAnotherThing(location);
+});
+```
+
+---
+## Example **Style Guide**
 
 <style scoped>
     p {
         padding-top : 380px;
     }
-    pre {
-    white-space: pre-wrap;
-    }
 </style>
 
-![bg left: 100% 70%](./../images/materi-java/clean-code/airbnb.png)
+![bg center: 60%](./../images/materi-java/clean-code/airbnb.png)
 
-![bg left: 100% 70%](./../images/materi-java/clean-code/google.png)
+![bg center: 60%](./../images/materi-java/clean-code/google.png)
 
-Airbnb Javascript Stryle Guide : 
-Google Python Style Guide :
+Javascript : https://github.com/airbnb/javascript
+Python : https://google.github.io/styleguide/pyguide.html
 
 ---
 ### Suggestion **Formatting?**
