@@ -9,12 +9,10 @@ marp: true
 
 ![bg left:40% 60%](./../images/rawlabs-academy-logo.png)
 
-# **Database**
-
+# **RESTFUL API & SPRING BOOT**
 Intro REST API and Getting Started with **Spring Boot**
 
 ---
-
 <!-- _class: lead -->
 
 <style scoped>
@@ -23,20 +21,15 @@ Intro REST API and Getting Started with **Spring Boot**
         color: white;
     } 
 </style>
-
 # RESTFUL API
-
 ![bg](./../images/materi-java/restful-api/bg.jpg)
 
 ---
  <!-- _class: lead -->
-
 # Before REST, What is API ? 
-
- ![width:850px](./../images/materi-java/restful-api/API.png)
-
+![width:850px](./../images/materi-java/restful-api/API.png)
+ 
  ---
-
  # What is **REST** ? 
 
  REST stands fo **RE**presentational **S**tate **T**ransfer.
@@ -51,19 +44,16 @@ Intro REST API and Getting Started with **Spring Boot**
         font-size: 1.3rem;
     }
 </style>
-
  ## **RESTFUL API** `≠` **HTPP API**
 
  REST architecture and HTTP 1.1 protocol **are independent of each other** , but the HTTP 1.1 protocol was built to be the ideal protocol to follow the principles and constraints of REST
 
  ---
-
  <style scoped>
     p {
         font-size: 1.1rem;
     }
 </style>
-
   # **HTTP**
 
   HTTP stands for **H**yper**t**ext **T**ransfer **P**rotocol 
@@ -74,45 +64,32 @@ Intro REST API and Getting Started with **Spring Boot**
 
 ---
  <!-- _class: lead -->
-
 # HTPP Flow
-
 ![width:1200px](./../images/materi-java/restful-api/http.png)
 
 ---
-
  <!-- _class: lead -->
-
 # HTTP Request Example 
-
 ![width:1100](./../images/materi-java/restful-api/http-example.png)
 
 ---
 <!-- _class: lead -->
-
 # Request Line
-
 ![width:900](./../images/materi-java/restful-api/request-line.png)
 
 ---
 <!-- _class: lead -->
-
 # HTTP Common Method
-
 ![width:1000](./../images/materi-java/restful-api/common-method.png)
 
 ---
 <!-- _class: lead -->
-
 # HTTP Other **Standard** Method
-
 ![width:850](./../images/materi-java/restful-api/other-method.png)
 
 ---
 <!-- _class: lead -->
-
 # URL
-
 ![width:1100](./../images/materi-java/restful-api/URL.png)
 
 ---
@@ -134,46 +111,35 @@ table {
 
 ---
 <!-- _class: lead -->
-
 # HTTP Response Example
-
 ![width:1200px](./../images/materi-java/restful-api/response-example.png)
 
 
 ---
 <!-- _class: lead -->
-
 # HTTP Response Status Line
-
 ![width:500px](./../images/materi-java/restful-api/response-status-line.png)
 
 ---
 <!-- _class: lead -->
-
 # List Of HTTP Status Codes
-
 ![width:1100px](./../images/materi-java/restful-api/list-status-code.png)
 
 ---
 <!-- _class: lead -->
-
 # HTTP Status Code
-
 ![width:600px](./../images/materi-java/restful-api/status-code.png)
 
 ---
-
- <style scoped>
+<style scoped>
     p {
         font-size: 0.85rem;
     }
     table {
-    height: 50%;
-    width: 100%;
-    font-size: 30px;
+        width: 100%;
+        font-size: 30px;
     }
 </style>
-
 # REST Path URL Restriction
 
 `/user/1/balance` (balance owned by user id 1)
@@ -187,21 +153,16 @@ Remember, everything in REST is **resource, RPC -> function method only POST or 
 | Delete a user | DELETE | /deleteUser | /users/10
 | Get balance of user | GET | /getUserBalance | /users/11/balance
 
-
 ---
 <!-- _class: lead -->
-
 <style scoped>
     h1 {
         font-size: 2.2rem;
         color: white;
     } 
 </style>
-
 # Before Spring Boot
-
 ![bg](./../images/materi-java/restful-api/bg.jpg)
-
 
 ---
 <style scoped>
