@@ -206,5 +206,14 @@ The annotation `@Schema` will create OpenAPI **Schema** to including field on en
 - **`@ApiResponse`** to define individual response api docs.
 
 ---
-### Generated SwaggerUI
+<style scoped>
+  strong {
+    color: green;
+  }
+</style>
+### Generated **SwaggerUI**
 ![left h:500](../images/materi-java/swagger-apidocs/generated-swagger-ui.png)
+
+---
+ <!-- _class: lead -->
+![w:1000](./../images/thank-you.png)
