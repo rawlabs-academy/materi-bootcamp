@@ -191,7 +191,7 @@ Code duplication occurs because of frequent copy and paste. To avoid duplication
 
 # Refactoring
  ![width:350px](./../images/materi-java/clean-code/refactoring.png)
-**Refactoring** is the process of restructuring the code created, by changing the internal structure without changing the external behavior. The principle of KISS and DRY can be achieved by refactoring.
+**Refactoring** is the process of restructuring the code created, by changing the internal structure without changing the external behavior. The principle of `KISS` and `DRY` can be achieved by refactoring.
 
 ---
 ### Technique **Refactoring**
@@ -200,3 +200,8 @@ Code duplication occurs because of frequent copy and paste. To avoid duplication
 - Breaking down code with functions/classes
 - Fix code naming and location
 - Detection of duplicated code
+
+---
+## Task
+Create summary about Clean Code and some example implementation.
+![bg right:60% 90%](./../images/thank-you.png)
