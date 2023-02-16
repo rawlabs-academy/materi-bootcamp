@@ -114,7 +114,7 @@ paths:
 ---
 ## Preparation
 We need prepare some prerequisities like below
-- `springfox-boot-starter` and `springfox-swagger-ui` dependencies
+- `springdoc-openapi-starter-webmvc-ui` dependencies
 - Spring Boot project
 - IDE
 - Glass of coffee 😁
