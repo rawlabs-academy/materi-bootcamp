@@ -103,7 +103,7 @@ It will be translated into SQL by **"select b.\* from book b join category c on 
 
 ---
 <!-- _class: lead -->
-<style>
+<style scoped>
     h1 {
         font-size: 3.5rem;
     }
