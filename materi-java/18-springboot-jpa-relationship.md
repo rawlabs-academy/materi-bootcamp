@@ -208,5 +208,34 @@ or if **StockType** is `REDUCTION` that mean stock will be **reducted** by reque
 # **Soft Deletes**
 
 ---
+### What is **Soft Deletes**?
+Deleting data permanently from a table is a common requirement when interacting with database. But, sometimes there are business requirements to **not permanently delete** data from the database. 
+
+The solution is we just **hide that data** so that can’t be accessed from the front-end.
+
+---
+<style scoped>
+    p {
+        font-size: 0.8rem;
+    }
+</style>
+### Implementation
+By default, the delete command in the JPA repository will run a **SQL delete query**. So, let's first add some **annotation** to Entity class.
+
+![left h:400](../images/materi-java/jpa-relationship/soft-deletes.png)
+
+---
+#### **JPA Query LIKE** Example
+![left h:480](../images/materi-java/jpa-relationship/jpa-query-like.png)
+
+---
+#### **JPA Query Count** Example
+![left w:1125](../images/materi-java/jpa-relationship/jpa-count.png)
+
+---
+#### **JPA Query Min and Max** Example
+![left h:480](../images/materi-java/jpa-relationship/jpa-max-min.png)
+
+---
 <!-- _class: lead -->
 ![w:1000](./../images/thank-you.png)
