@@ -55,7 +55,7 @@ More detail information please read the official documentation at [JWT.io](https
 
 - **`jwt.token.validity`** value in miliseconds
 - **`jwt.signing.key`** is random string value that should be `>=` 256 bit. At least **50 characters**
-- Generate random string at [Random string generator](59mNST6kvqfzu2izgFAUMUPNgbheY9PigTZB6KW5LL9XKaqKRP)
+- Generate random string at [Random string generator](http://www.unit-conversion.info/texttools/random-string-generator/)
 
 ---
 <!-- _class: lead -->
@@ -74,7 +74,7 @@ More detail information please read the official documentation at [JWT.io](https
     }
 </style>
 ### **User DAO**
-`User` class will implement methods of `UserDetail` class like :
+`User` class will implement methods of `UserDetails` class like :
 - `getAuthorities()` set return to **null**
 - `isAccountNonExpired()` set return to **true**
 - `isAccountNonLocked()` set return to **true**
